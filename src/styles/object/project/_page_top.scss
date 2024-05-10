@@ -10,8 +10,13 @@
 		align-items: center;
 		justify-content: center;
 		gap: 30px;
+		color: #1a1a1a;
 		&.en{
 			font-family: $serif;
+		}
+		span{
+			@include fontsize(36);
+			font-family: $noto;
 		}
 		@include media(lg) {
 			@include fontsize(42);
@@ -77,13 +82,32 @@
 	}
 	&__news {
 		&Box{
-			width: 400px;
+			max-width: 1080px;
+			width: 90%;
 			border: solid 1px $pink;
 			border-radius: 0.5rem;
-			margin: 50px auto;
-			padding: 20px;
+			margin: 60px auto;
+			padding: 30px 40px;
 			&__ttl{
 				text-align: center;
+				margin-bottom: 20px;
+				@include media(lg) {
+					@include fontsize(20);
+					font-weight: 600;
+				}
+				@include media(sm) {
+					@include fontsize(18);
+				}
+			}
+			&__txt{
+				@include media(lg) {
+					@include fontsize(16);
+					font-weight: 400;
+					line-height: 1.5
+				}
+				@include media(sm) {
+					@include fontsize(14);
+				}
 			}
 		}
 	}
