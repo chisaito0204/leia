@@ -1,0 +1,49 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/style.scss";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, "https://leia-dance.jp/");
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, user-scalable=yes" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Leia Dance Studio | {title}</title>
+    <meta name="description" content={description} />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- ogp -->
+    <meta property="og:title" content={"Leia Dance Studio" + title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content='/assets/img/ogp.jpg"/' />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Leia Dance Studio" />
+    <!-- / ogp -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
+    <script is:inline src="/assets/js/gsap.min.js"></script>
+    <script is:inline src="/assets/js/ScrollTrigger.min.js"></script>
+    <script is:inline src="/assets/js/swiper-bundle.min.js"></script>
+  </head>
+  <body>
+    <Header />
+    <slot name="body" />
+    <Footer />
+
+    <script is:inline type="module" src="/assets/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+.footer {
+  font-family: $noto;
+  background: $pink;
+  @include media(sm) {
+  }
+  &__contents {
+    @include media(lg) {
+      display: flex;
+    }
+  }
+  &__logo {
+    @include media(lg) {
+      flex: 0 0 20%;
+      position: relative;
+    }
+    @include media(sm) {
+      padding: 60px 95px;
+    }
+    .logo {
+      width: 155px;
+      @include media(lg) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      @include media(sm) {
+        text-align: center;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  &__nav {
+    @include media(lg) {
+      flex: 0 0 80%;
+      font-family: $noto;
+      padding: 40px 120px 40px 100px;
+    }
+    @include media(sm) {
+      padding: 0 20px;
+    }
+    &List {
+      &__list {
+        @include media(lg) {
+          padding: 40px 0;
+        }
+        @include media(sm) {
+          padding: 0;
+        }
+      }
+    }
+    &Link {
+      &Sns {
+        display: flex;
+        align-items: center;
+        @include media(lg) {
+          gap: 30px;
+        }
+        @include media(sm) {
+          margin-top: 60px;
+          justify-content: center;
+          gap: 40px;
+          a {
+            img {
+              width: 40px;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+  .copyright {
+    color: #fff;
+    font-family: $noto;
+    @include fontsize(10);
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0.4px;
+    @include media(lg) {
+      text-align: right;
+    }
+    @include media(sm) {
+      text-align: center;
+      display: block;
+      padding-bottom: 40px;
+    }
+  }
+}
+
+.top-footer .totop {
+  display: block;
+}

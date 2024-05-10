@@ -1,0 +1,89 @@
+/* static index
+* ----------------
+* common
+* ---------------- */
+/* SP改行 */
+@include media(sm) {
+	.br::before {
+		content: "\A";
+		white-space: pre;
+	}
+}
+
+/* colors */
+.pink {
+	color: $pink;
+}
+
+/* scroll down */
+.scrollDown {
+	width: 1px;
+	height: 40px;
+	background: #333;
+	animation: scrollDown 2s ease infinite;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+/* indent */
+.indent01 {
+	padding-left: 1em;
+	text-indent: -1em;
+	display: block;
+}
+.indent02 {
+	padding-left: 1.5em;
+	text-indent: -1.5em;
+	display: block;
+}
+.indent03 {
+	padding-left: 3em;
+	text-indent: -3em;
+	display: block;
+}
+
+@keyframes scrollDown {
+	0% {
+		transform-origin: top;
+		transform: scaleY(0);
+	}
+	45% {
+		transform-origin: top;
+		transform: scaleY(1);
+	}
+	55% {
+		transform-origin: bottom;
+		transform: scaleY(1);
+	}
+	100% {
+		transform-origin: bottom;
+		transform: scaleY(0);
+	}
+}
+
+/* フェードイン */
+.js-fade {
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+	&.is-show {
+		opacity: 1;
+	}
+	&Slide {
+		transform: translateY(50px);
+		transition:
+			opacity 1s ease-in-out,
+			transform 1s ease-in-out;
+		&.is-show {
+			transform: translateY(0);
+		}
+	}
+}
+
+.mod {
+	//FV
+	&FV {
+		position: relative;
+		&__KV {
+		}
+	}
+}

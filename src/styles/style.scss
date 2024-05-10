@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+@import 'foundation/setting';
+@import 'foundation/mixin';
+@import 'foundation/base';
+@import 'foundation/reset';
+
+@import 'layout/layout';
+@import 'layout/header';
+@import 'layout/footer';
+
+@import 'object/component/breadcrumbs';
+@import 'object/component/swiper';
+
+@import 'object/project/page_top';
+@import 'object/project/page_about';
+@import 'object/project/page_static';
+@import 'object/project/page_faq';
+@import 'object/project/page_history';

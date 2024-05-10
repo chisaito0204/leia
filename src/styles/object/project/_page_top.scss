@@ -1,0 +1,104 @@
+.top {
+	@include media(lg) {
+	}
+	@include media(sm) {
+	}
+	&__title {
+		text-align: center;
+		font-family: $noto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 30px;
+		&.en{
+			font-family: $serif;
+		}
+		@include media(lg) {
+			@include fontsize(42);
+		}
+		@include media(sm) {
+		}
+	}
+	&__subtitle {
+		@include media(lg) {
+		}
+		@include media(sm) {
+		}
+	}
+	&__mv {
+		position: relative;
+		.swiper {
+			img {
+				width: 100%;
+				height: 100vh;
+			}
+			.swiper-pagination-bullet {
+				background-color: #d9d9d9;
+				opacity: 0.6;
+				&.swiper-pagination-bullet-active {
+					background-color: $pink;
+					opacity: 1;
+				}
+			}
+		}
+		&__sns {
+			position: absolute;
+			top: 50%;
+			right: 15px;
+			z-index: 10;
+			.snsImg {
+				width: 23px;
+				&:nth-of-type(-n+2){
+					margin-bottom: 20px;
+				}
+				> img {
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+		&__banner {
+			color: #fff;
+			position: fixed;
+			top: 80%;
+			right: 0;
+			z-index: 10;
+			font-weight: 600;
+			background-image: linear-gradient(117deg, rgba(225, 44, 109, 1) 10%, rgba(173, 34, 84, 1) 49%, rgba(123, 24, 60, 1) 90%);
+			display: flex;
+			align-items: center;
+			padding: 20px 13px 20px 15px;
+			@include media(lg) {
+				@include fontsize(14);
+			}
+			@include media(sm) {
+			}
+		}
+	}
+	&__news {
+		&Box{
+			width: 400px;
+			border: solid 1px $pink;
+			border-radius: 0.5rem;
+			margin: 50px auto;
+			padding: 20px;
+			&__ttl{
+				text-align: center;
+			}
+		}
+	}
+	&__about {
+	}
+	&__blog {
+	}
+	&__teacher {
+	}
+	&__class {
+	}
+	&__lesson {
+	}
+	&__faq {
+	}
+	&__contact {
+	}
+}
