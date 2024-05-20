@@ -35,6 +35,15 @@ const mvSwiper = new Swiper('.top__mv .swiper', {
   });
 
 
+/*********************
+ * 3. Faq Toggle
+ *********************/
+  $(function () {
+    $('.top__faq__inner').on('click', function () {
+      $(this).find('.top__faq__inner--qu').toggleClass("is-open");
+      $(this).find('.top__faq__inner--an').slideToggle();
+    });
+  });
 
 
 

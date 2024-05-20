@@ -555,7 +555,43 @@ button {
   .top__title {
     font-size: 42px;
     font-size: 2.625rem;
+    margin-bottom: 50px;
   }
+}
+.top__subtitle {
+  font-family: "Noto Serif Display", serif, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  position: relative;
+}
+@media (min-width: 960px) {
+  .top__subtitle {
+    font-size: 36px;
+    font-size: 2.25rem;
+  }
+}
+.top__subtitle > span {
+  position: relative;
+  z-index: 10;
+}
+.top__subtitle:before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: #e12c6d;
+  position: absolute;
+  left: -15px;
+  bottom: -5px;
+  z-index: 0;
+}
+.top__subtitle:after {
+  content: "";
+  display: block;
+  width: 154px;
+  height: 1px;
+  background: #1a1a1a;
+  position: absolute;
+  bottom: -8px;
+  left: 25px;
 }
 .top__mv {
   position: relative;
@@ -581,7 +617,7 @@ button {
 .top__mv__sns .snsImg {
   width: 23px;
 }
-.top__mv__sns .snsImg:nth-of-type(-n+2) {
+.top__mv__sns .snsImg:nth-of-type(-n + 2) {
   margin-bottom: 20px;
 }
 .top__mv__sns .snsImg > img {
@@ -611,7 +647,7 @@ button {
   width: 90%;
   border: solid 1px #E12C6D;
   border-radius: 0.5rem;
-  margin: 60px auto;
+  margin: 100px auto;
   padding: 30px 40px;
 }
 .top__newsBox__ttl {
@@ -644,6 +680,417 @@ button {
     font-size: 14px;
     font-size: 0.875rem;
   }
+}
+.top__aboutBox {
+  display: flex;
+  gap: 60px;
+  position: relative;
+}
+.top__aboutBox:nth-of-type(2) {
+  justify-content: flex-end;
+}
+.top__aboutBox:nth-of-type(2) .top__aboutBox__txt01 {
+  flex: 0 0 35%;
+}
+.top__aboutBox:nth-of-type(3) {
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 960px) {
+  .top__aboutBox {
+    margin-bottom: 80px;
+  }
+}
+.top__aboutBox img {
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 960px) {
+  .top__aboutBox__txt01 {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 200%;
+    flex: 0 0 45%;
+    text-wrap: pretty;
+  }
+}
+.top__aboutBox__txt01 > span {
+  color: #E12C6D;
+  font-weight: 600;
+}
+.top__aboutBox__txt02 {
+  position: absolute;
+  font-family: "Noto Serif Display", serif, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  color: #afafb0;
+  bottom: -8%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+@media (min-width: 960px) {
+  .top__aboutBox__txt02 {
+    font-size: 80px;
+    font-size: 5rem;
+  }
+}
+.top__blog {
+  margin: 100px 0;
+}
+.top__blogBox {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.top__blogBox__article {
+  flex: 0 0 25%;
+}
+.top__blogBox__article img {
+  width: 100%;
+  height: auto;
+}
+.top__blogBox__articleTags {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+}
+.top__blogBox__articleTags--tag {
+  border-radius: 0.3rem;
+  background: #e12c6d;
+  color: #fff;
+}
+@media (min-width: 960px) {
+  .top__blogBox__articleTags--tag {
+    font-size: 14px;
+    font-size: 0.875rem;
+    padding: 7px 10px;
+  }
+}
+@media (min-width: 960px) {
+  .top__blogBox__articleTags--date {
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+}
+.top__blogBox__articleTxt {
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-family: "Noto Sans", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+@media (min-width: 960px) {
+  .top__blogBox__articleTxt {
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 150%;
+    font-weight: 600;
+  }
+}
+.top__teacher {
+  margin-bottom: 100px;
+}
+.top__teacherBox {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+.top__teacherBox__prof {
+  flex: 0 0 25%;
+  background: rgba(225, 44, 109, 0.1);
+  height: 360px;
+  position: relative;
+}
+.top__teacherBox__prof > img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 9%;
+  left: 8%;
+  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.top__teacherBox__txtbox {
+  flex: 0 0 35%;
+}
+.top__teacherBox__txtbox--name {
+  border-bottom: solid 1px #E12C6D;
+}
+@media (min-width: 960px) {
+  .top__teacherBox__txtbox--name {
+    font-size: 32px;
+    font-size: 2rem;
+    line-height: 150%;
+    margin-bottom: 40px;
+  }
+}
+@media (min-width: 960px) {
+  .top__teacherBox__txtbox--name > span {
+    font-size: 28px;
+    font-size: 1.75rem;
+    font-family: "Noto Serif Display", serif, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  }
+}
+@media (min-width: 960px) {
+  .top__teacherBox__txtbox--text {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 200%;
+  }
+  .top__teacherBox__txtbox--text > a {
+    color: #E12C6D;
+    font-weight: bold;
+    border-bottom: solid 1px #E12C6D;
+  }
+}
+.top__class {
+  background: rgba(225, 44, 109, 0.1);
+  padding: 120px 0;
+  margin-bottom: 80px;
+}
+.top__classBox {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+}
+.top__classBox:nth-of-type(2) {
+  align-items: flex-end;
+}
+.top__classBox__txtbox {
+  background: #fff;
+  text-align: center;
+  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 60px 55px;
+  position: relative;
+  flex: 0 0 43%;
+  text-wrap: pretty;
+}
+@media (min-width: 960px) {
+  .top__classBox__txtbox--ttl {
+    font-size: 24px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 960px) {
+  .top__classBox__txtbox--txt {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 180%;
+  }
+}
+.top__classBox__txtbox--dec {
+  font-family: "Oooh Baby", cursive, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  color: #E12C6D;
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  transform: rotate(-9deg);
+}
+@media (min-width: 960px) {
+  .top__classBox__txtbox--dec {
+    font-size: 60px;
+    font-size: 3.75rem;
+  }
+}
+.top__lesson {
+  width: 70%;
+  margin: 0 auto 100px;
+}
+.top__lesson__schedule {
+  width: 80%;
+  margin: 40px auto 60px;
+}
+.top__lesson__schedule img {
+  width: 100%;
+  height: auto;
+}
+.top__lesson__schedule--ttl {
+  font-family: "Noto Sans", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+@media (min-width: 960px) {
+  .top__lesson__schedule--ttl {
+    font-size: 24px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+}
+.top__lesson__schedule--note {
+  font-family: "Noto Sans", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+@media (min-width: 960px) {
+  .top__lesson__schedule--note {
+    font-size: 13px;
+    font-size: 0.8125rem;
+    margin-top: 15px;
+    line-height: 150%;
+  }
+}
+@media (min-width: 960px) {
+  .top__lesson__fee {
+    margin: 50px 0;
+  }
+}
+.top__lesson__feeBox {
+  background: url("/assets/img/top/ticket.png") no-repeat;
+  background-image: 100%;
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  padding: 33px;
+}
+.top__lesson__feeBox:nth-of-type(2) {
+  padding: 60px;
+}
+.top__lesson__feeBox--ttl {
+  font-family: "Noto Sans", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+@media (min-width: 960px) {
+  .top__lesson__feeBox--ttl {
+    font-size: 24px;
+    font-size: 1.5rem;
+    line-height: 170%;
+  }
+}
+.top__lesson__feeBox--note {
+  font-family: "Noto Sans", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+@media (min-width: 960px) {
+  .top__lesson__feeBox--note {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 170%;
+  }
+}
+.top__lesson__fee--txt {
+  font-family: "Noto Sans", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  text-align: center;
+}
+@media (min-width: 960px) {
+  .top__lesson__fee--txt {
+    font-size: 22px;
+    font-size: 1.375rem;
+    margin: 25px 0;
+  }
+}
+.top__lesson__fee--img {
+  text-align: center;
+  margin-bottom: 50px;
+}
+@media (min-width: 960px) {
+  .top__lesson__fee--payment {
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 160%;
+  }
+}
+.top__lesson__fee--payment > .txt01 {
+  position: relative;
+}
+.top__lesson__fee--payment > .txt01:before {
+  content: "";
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  background: #E12C6D;
+  position: absolute;
+  top: 33%;
+  left: -18px;
+}
+.top__lesson__fee--payment > .txt02 {
+  border-bottom: solid 1px #E12C6D;
+}
+@media (min-width: 960px) {
+  .top__lesson__fee--payment > .txt03 {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+}
+.top__lesson__access {
+  margin-top: 50px;
+}
+@media (min-width: 960px) {
+  .top__lesson__access--txt {
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 170%;
+    margin-bottom: 30px;
+  }
+}
+.top__lesson__access--txt > a {
+  border-bottom: solid 1px #1a1a1a;
+}
+.top__faq {
+  margin-bottom: 100px;
+}
+.top__faq__inner {
+  border: solid 1px #E12C6D;
+  border-radius: 0.3rem;
+  width: 70%;
+  margin: 0 auto;
+  padding: 15px 30px;
+  font-family: "Noto Sans", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  position: relative;
+}
+.top__faq__inner--qu:before {
+  content: "Q.";
+  font-family: "Noto Serif Display", serif, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  font-size: 32px;
+  font-size: 2rem;
+}
+.top__faq__inner--an:before {
+  content: "A.";
+  font-family: "Noto Serif Display", serif, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  font-size: 32px;
+  font-size: 2rem;
+  color: #E12C6D;
+}
+.top__faq__inner:after {
+  content: "";
+  background: url("/assets/img/common/ico_allow01.svg") no-repeat center;
+  display: block;
+  width: 16px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  transform: translate(0%, -50%);
+}
+.top__faq__box {
+  border: solid 1px #E12C6D;
+  border-radius: 0.3rem;
+  width: 70%;
+  margin: 0 auto;
+  padding: 15px 20px;
+  font-family: "Noto Sans", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 16px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+.top__faq__box > p {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.top__faq__box:after {
+  content: "";
+  background: url("/assets/img/common/ico_allow01.svg") no-repeat;
+  display: block;
+  width: 16px;
+  height: 10px;
+}
+.top__faq__box .qu {
+  font-family: "Noto Serif Display", serif, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  font-size: 32px;
+  font-size: 2rem;
 }
 /* static index
 * ----------------
