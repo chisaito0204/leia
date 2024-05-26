@@ -86,4 +86,31 @@
 		&__KV {
 		}
 	}
+	&MoreBtn{
+		color: $pink;
+		font-family: $serif;
+		transition: 0.3s;
+		display: block;
+		width: fit-content;
+		margin: 50px 100px 0 auto;
+		transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+		@include media(lg) {
+			@include fontsize(24);
+		}
+		&:after{
+			content: '';
+			background: url('/assets/img/common/allow.svg') no-repeat;
+			width: 148px;
+			height: 12px;
+			display: block;
+		}
+		&:hover{
+			opacity: 0.7;
+			&::after {
+				background: url('/assets/img/common/allow.svg') no-repeat;
+				animation: SlideInAllow 1s ease;
+				transform: none;
+			}
+		}
+	}
 }

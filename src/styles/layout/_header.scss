@@ -21,12 +21,26 @@
     &.isHide {
         transform: translate(-50%, -100%);
     }
+    &.scroll-nav {
+        .header__content {
+            padding: 5px 60px;
+        }
+        .header__logo {
+            .logo {
+                max-width: 200px;
+            }
+        }
+        .header__nav {
+            color: #1a1a1a;
+        }
+    }
     &__content {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        transition: 0.5s;
         @include media(lg) {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(0, 0, 0, 0.05);
             box-shadow: 0px 2px 35px 0px rgba(0, 0, 0, 0.04);
             backdrop-filter: blur(4px);
             padding: 15px 60px;
@@ -34,12 +48,18 @@
     }
     &__logo {
         @include media(sm) {
-            padding: 20px 0 10px 20px;
             position: relative;
-            z-index: 99;
+            // z-index: 99;
         }
-        .logo{
-            max-width: 270px;
+        .logo {
+            transition: 0.5s;
+            @include media(lg) {
+                max-width: 270px;
+            }
+            @include media(sm) {
+                max-width: 200px;
+                padding-left: 10px;
+            }
         }
         img {
             width: 100%;
@@ -47,6 +67,7 @@
         }
     }
     &__nav {
+        transition: 0.3s;
         @include media(lg) {
             color: #333;
             text-align: center;
@@ -64,24 +85,22 @@
                 gap: 30px;
             }
         }
-        &__item{
-            &.ja{
+        &__item {
+            &.ja {
                 font-family: $noto;
             }
-            a{
+            a {
                 transition: 0.3s;
-                &:hover{
+                &:hover {
                     color: $pink;
                 }
             }
         }
     }
     &__spMenuBtn {
-        width: 66px;
-        height: 66px;
-        background: rgba(255, 255, 255, 0.6);
-        border: solid 1px #fff;
-        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        background: $pink;
         position: relative;
         z-index: 99;
         margin: 10px 10px 0 0;
@@ -94,7 +113,7 @@
         &--bar {
             width: 26px;
             height: 1px;
-            background-color: #4d4d4d;
+            background-color: #fff;
             display: block;
             transition: all 0.2s ease-in-out;
             &:first-of-type {
@@ -126,12 +145,12 @@
         display: none;
         &.is-open {
             display: block;
-            background: linear-gradient(108deg, #fff 0%, #f5f4f0 100%);
+            background: $pink;
             box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
             position: fixed;
             top: 0;
-            left: 0;
-            width: 100%;
+            right: 0;
+            width: 80%;
             height: 100vh;
             overflow: scroll;
             animation: SlideIn 0.5s;
@@ -141,19 +160,19 @@
             margin: 85px auto 0;
         }
         &__item {
+            width: 40%;
+            margin-left: auto;
             border-bottom: 1px solid #e6e6e6;
-            padding: 24px 20px;
+            padding: 14px 0;
             position: relative;
             font-size: 16px;
-            color: #333;
+            color: #fff;
+            text-align: right;
             font-family: $noto;
             @include fontsize(16);
             font-weight: 400;
             line-height: 200%;
-            letter-spacing: 0.64px;
-            &:first-of-type {
-                border-top: 1px solid #e6e6e6;
-            }
+            letter-spacing: 0.64px; 
             &--txt {
                 position: relative;
                 &::after {
@@ -172,7 +191,6 @@
                     &::after {
                         transform: translate(-50%, -50%) rotate(-45deg);
                     }
-                    
                 }
             }
             &--txtbox {
@@ -180,7 +198,10 @@
                 height: 0;
                 opacity: 0;
                 overflow: hidden;
-                transition: padding 0.5s, height 0.5s, opacity 0.5s;
+                transition:
+                    padding 0.5s,
+                    height 0.5s,
+                    opacity 0.5s;
                 &.is-open {
                     height: 130px;
                     padding: 20px 0 24px;
@@ -205,10 +226,10 @@
             align-items: center;
             margin-top: 60px;
             justify-content: center;
-            gap: 40px;
+            gap: 20px;
             a {
                 img {
-                    width: 40px;
+                    width: 26px;
                     height: auto;
                 }
             }

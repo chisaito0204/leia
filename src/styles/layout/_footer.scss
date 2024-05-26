@@ -1,34 +1,53 @@
 .footer {
   font-family: $noto;
   background: $pink;
+  padding-left: 40px;
+  padding-bottom: 9px;
   @include media(sm) {
+  }
+  &Sub {
+    padding: 10px 25px;
+    // border-top: solid 2px $pink;
+    &__link {
+      font-weight: bold;
+      color: $pink;
+      display: flex;
+      align-items: center;
+      > span {
+        border-bottom: solid 1px $pink;
+      }
+      &:before {
+        content: "";
+        background: url("/assets/img/common/ico_mail-pink.svg") no-repeat;
+        width: 28px;
+        height: 20px;
+        display: inline-block;
+        margin-right: 10px;
+      }
+    }
   }
   &__contents {
     @include media(lg) {
       display: flex;
+      align-items: flex-end;
+      margin-bottom: 20px;
     }
   }
   &__logo {
     @include media(lg) {
-      flex: 0 0 20%;
+      flex: 0 0 40%;
       position: relative;
     }
     @include media(sm) {
       padding: 60px 95px;
     }
     .logo {
-      width: 155px;
-      @include media(lg) {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
+      max-width: 247px;
       @include media(sm) {
         text-align: center;
       }
       img {
-        width: 100%;
+        width: auto;
         height: auto;
       }
     }
@@ -36,23 +55,48 @@
   &__nav {
     @include media(lg) {
       flex: 0 0 80%;
-      font-family: $noto;
       padding: 40px 120px 40px 100px;
     }
     @include media(sm) {
       padding: 0 20px;
     }
     &List {
+      color: #fff;
+      flex: 0 0 40%;
+      font-family: $noto;
+      @include media(lg) {
+        padding-top: 30px;
+      }
       &__list {
+        display: flex;
+        flex-wrap: wrap;
         @include media(lg) {
-          padding: 40px 0;
         }
         @include media(sm) {
           padding: 0;
         }
       }
+      &__item {
+        @include media(lg) {
+          @include fontsize(16);
+          flex: 0 0 21%;
+          margin-bottom: 15px;
+          line-height: 160%;
+        }
+      }
     }
     &Link {
+      display: flex;
+      justify-content: space-between;
+      &Outer {
+        &:after {
+          content: "";
+          background: url("/assets/img/common/ico_outlink.svg") no-repeat;
+          width: 13px;
+          height: 13px;
+          display: inline-block;
+        }
+      }
       &Sns {
         display: flex;
         align-items: center;
@@ -70,6 +114,28 @@
             }
           }
         }
+      }
+    }
+    &Mail {
+      position: relative;
+      padding-left: 35px;
+      line-height: 160%;
+      margin-top: 12px;
+      @include media(lg) {
+        @include fontsize(16);
+        > span {
+          @include fontsize(14);
+        }
+      }
+      &:before {
+        content: "";
+        background: url("/assets/img/common/ico_mail-wh.svg") no-repeat;
+        width: 23px;
+        height: 23px;
+        display: block;
+        position: absolute;
+        top: 3px;
+        left: 0;
       }
     }
   }
@@ -91,6 +157,23 @@
   }
 }
 
-.top-footer .totop {
-  display: block;
+.pagetop {
+  display: none;
+  position: fixed;
+  bottom: 30%;
+  right: 15px;
+  > a {
+    display: block;
+    background-color: #1a1a1a;
+    text-align: center;
+    text-decoration: none;
+    width: 48px;
+    height: 48px;
+    padding: 10px 0;
+    &:hover {
+      filter: alpha(opacity=50);
+      -moz-opacity: 0.5;
+      opacity: 0.5;
+    }
+  }
 }

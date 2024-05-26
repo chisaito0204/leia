@@ -62,22 +62,12 @@
   }
 }
 
-@keyframes SlideInAllowPrev {
+
+@keyframes zoomUp {
   0% {
-    opacity: 0;
-    transform: translateX(50px);
+    transform: scale(1);
   }
   100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes progressBarAnimation {
-  from {
-    transform: scaleY(0);
-  }
-  to {
-    transform: scaleY(1);
+    transform: scale(1.15);
   }
 }

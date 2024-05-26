@@ -20,22 +20,12 @@
     transform: translateX(0);
   }
 }
-@keyframes SlideInAllowPrev {
+@keyframes zoomUp {
   0% {
-    opacity: 0;
-    transform: translateX(50px);
+    transform: scale(1);
   }
   100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes progressBarAnimation {
-  from {
-    transform: scaleY(0);
-  }
-  to {
-    transform: scaleY(1);
+    transform: scale(1.15);
   }
 }
 body {
@@ -187,14 +177,24 @@ button {
 .header.isHide {
   transform: translate(-50%, -100%);
 }
+.header.scroll-nav .header__content {
+  padding: 5px 60px;
+}
+.header.scroll-nav .header__logo .logo {
+  max-width: 200px;
+}
+.header.scroll-nav .header__nav {
+  color: #1a1a1a;
+}
 .header__content {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: 0.5s;
 }
 @media (min-width: 960px) {
   .header__content {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.05);
     box-shadow: 0px 2px 35px 0px rgba(0, 0, 0, 0.04);
     backdrop-filter: blur(4px);
     padding: 15px 60px;
@@ -202,17 +202,29 @@ button {
 }
 @media (max-width: 959px) {
   .header__logo {
-    padding: 20px 0 10px 20px;
     position: relative;
-    z-index: 99;
   }
 }
 .header__logo .logo {
-  max-width: 270px;
+  transition: 0.5s;
+}
+@media (min-width: 960px) {
+  .header__logo .logo {
+    max-width: 270px;
+  }
+}
+@media (max-width: 959px) {
+  .header__logo .logo {
+    max-width: 200px;
+    padding-left: 10px;
+  }
 }
 .header__logo img {
   width: 100%;
   height: auto;
+}
+.header__nav {
+  transition: 0.3s;
 }
 @media (min-width: 960px) {
   .header__nav {
@@ -244,11 +256,9 @@ button {
   color: #E12C6D;
 }
 .header__spMenuBtn {
-  width: 66px;
-  height: 66px;
-  background: rgba(255, 255, 255, 0.6);
-  border: solid 1px #fff;
-  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: #E12C6D;
   position: relative;
   z-index: 99;
   margin: 10px 10px 0 0;
@@ -262,7 +272,7 @@ button {
 .header__spMenuBtn--bar {
   width: 26px;
   height: 1px;
-  background-color: #4d4d4d;
+  background-color: #fff;
   display: block;
   transition: all 0.2s ease-in-out;
 }
@@ -292,12 +302,12 @@ button {
 }
 .header__spSideMenu.is-open {
   display: block;
-  background: linear-gradient(108deg, #fff 0%, #f5f4f0 100%);
+  background: #E12C6D;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  right: 0;
+  width: 80%;
   height: 100vh;
   overflow: scroll;
   animation: SlideIn 0.5s;
@@ -307,20 +317,20 @@ button {
   margin: 85px auto 0;
 }
 .header__spSideMenu__item {
+  width: 40%;
+  margin-left: auto;
   border-bottom: 1px solid #e6e6e6;
-  padding: 24px 20px;
+  padding: 14px 0;
   position: relative;
   font-size: 16px;
-  color: #333;
+  color: #fff;
+  text-align: right;
   font-family: "Noto Sans", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
   font-size: 16px;
   font-size: 1rem;
   font-weight: 400;
   line-height: 200%;
   letter-spacing: 0.64px;
-}
-.header__spSideMenu__item:first-of-type {
-  border-top: 1px solid #e6e6e6;
 }
 .header__spSideMenu__item--txt {
   position: relative;
@@ -369,25 +379,49 @@ button {
   align-items: center;
   margin-top: 60px;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
 }
 .header__spSideMenu__sns a img {
-  width: 40px;
+  width: 26px;
   height: auto;
 }
 
 .footer {
   font-family: "Noto Sans", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
   background: #E12C6D;
+  padding-left: 40px;
+  padding-bottom: 9px;
+}
+.footerSub {
+  padding: 10px 25px;
+}
+.footerSub__link {
+  font-weight: bold;
+  color: #E12C6D;
+  display: flex;
+  align-items: center;
+}
+.footerSub__link > span {
+  border-bottom: solid 1px #E12C6D;
+}
+.footerSub__link:before {
+  content: "";
+  background: url("/assets/img/common/ico_mail-pink.svg") no-repeat;
+  width: 28px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 10px;
 }
 @media (min-width: 960px) {
   .footer__contents {
     display: flex;
+    align-items: flex-end;
+    margin-bottom: 20px;
   }
 }
 @media (min-width: 960px) {
   .footer__logo {
-    flex: 0 0 20%;
+    flex: 0 0 40%;
     position: relative;
   }
 }
@@ -397,15 +431,7 @@ button {
   }
 }
 .footer__logo .logo {
-  width: 155px;
-}
-@media (min-width: 960px) {
-  .footer__logo .logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+  max-width: 247px;
 }
 @media (max-width: 959px) {
   .footer__logo .logo {
@@ -413,13 +439,12 @@ button {
   }
 }
 .footer__logo .logo img {
-  width: 100%;
+  width: auto;
   height: auto;
 }
 @media (min-width: 960px) {
   .footer__nav {
     flex: 0 0 80%;
-    font-family: "Noto Sans", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
     padding: 40px 120px 40px 100px;
   }
 }
@@ -428,15 +453,44 @@ button {
     padding: 0 20px;
   }
 }
+.footer__navList {
+  color: #fff;
+  flex: 0 0 40%;
+  font-family: "Noto Sans", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
 @media (min-width: 960px) {
-  .footer__navList__list {
-    padding: 40px 0;
+  .footer__navList {
+    padding-top: 30px;
   }
+}
+.footer__navList__list {
+  display: flex;
+  flex-wrap: wrap;
 }
 @media (max-width: 959px) {
   .footer__navList__list {
     padding: 0;
   }
+}
+@media (min-width: 960px) {
+  .footer__navList__item {
+    font-size: 16px;
+    font-size: 1rem;
+    flex: 0 0 21%;
+    margin-bottom: 15px;
+    line-height: 160%;
+  }
+}
+.footer__navLink {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__navLinkOuter:after {
+  content: "";
+  background: url("/assets/img/common/ico_outlink.svg") no-repeat;
+  width: 13px;
+  height: 13px;
+  display: inline-block;
 }
 .footer__navLinkSns {
   display: flex;
@@ -457,6 +511,32 @@ button {
     width: 40px;
     height: auto;
   }
+}
+.footer__navMail {
+  position: relative;
+  padding-left: 35px;
+  line-height: 160%;
+  margin-top: 12px;
+}
+@media (min-width: 960px) {
+  .footer__navMail {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+  .footer__navMail > span {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+}
+.footer__navMail:before {
+  content: "";
+  background: url("/assets/img/common/ico_mail-wh.svg") no-repeat;
+  width: 23px;
+  height: 23px;
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 0;
 }
 .footer .copyright {
   color: #fff;
@@ -480,8 +560,25 @@ button {
   }
 }
 
-.top-footer .totop {
+.pagetop {
+  display: none;
+  position: fixed;
+  bottom: 30%;
+  right: 15px;
+}
+.pagetop > a {
   display: block;
+  background-color: #1a1a1a;
+  text-align: center;
+  text-decoration: none;
+  width: 48px;
+  height: 48px;
+  padding: 10px 0;
+}
+.pagetop > a:hover {
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  opacity: 0.5;
 }
 
 .modBreadCrumb {
@@ -543,20 +640,41 @@ button {
   gap: 30px;
   color: #1a1a1a;
 }
+@media (min-width: 960px) {
+  .top__title {
+    font-size: 36px;
+    font-size: 2.25rem;
+    margin-bottom: 50px;
+  }
+}
 .top__title.en {
   font-family: "Noto Serif Display", serif, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
 }
-.top__title span {
+@media (min-width: 960px) {
+  .top__title.en {
+    font-size: 42px;
+    font-size: 2.625rem;
+  }
+}
+.top__title .ja {
   font-size: 36px;
   font-size: 2.25rem;
   font-family: "Noto Sans", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
 }
-@media (min-width: 960px) {
-  .top__title {
-    font-size: 42px;
-    font-size: 2.625rem;
-    margin-bottom: 50px;
-  }
+.top__title .sub {
+  font-size: 16px;
+  font-size: 1rem;
+  font-family: "Noto Sans", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  display: block;
+}
+.top__title .sub:before {
+  content: "";
+  display: block;
+  background: #E12C6D;
+  width: 75px;
+  height: 2px;
+  margin: 10px auto;
+  border-radius: 5px;
 }
 .top__subtitle {
   font-family: "Noto Serif Display", serif, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
@@ -596,9 +714,17 @@ button {
 .top__mv {
   position: relative;
 }
+.top__mv .swiper .mvImg {
+  animation: zoomUp 10s linear 0s 1 normal both;
+}
 .top__mv .swiper img {
   width: 100%;
   height: 100vh;
+}
+@media (max-width: 959px) {
+  .top__mv .swiper img {
+    object-fit: cover;
+  }
 }
 .top__mv .swiper .swiper-pagination-bullet {
   background-color: #d9d9d9;
@@ -699,6 +825,9 @@ button {
 @media (min-width: 960px) {
   .top__aboutBox {
     margin-bottom: 80px;
+  }
+  .top__aboutBox:last-of-type {
+    margin-bottom: 0;
   }
 }
 .top__aboutBox img {
@@ -854,7 +983,12 @@ button {
   gap: 30px;
 }
 .top__classBox:nth-of-type(2) {
+  align-items: center;
+  margin-top: 30px;
+}
+.top__classBox:nth-of-type(3) {
   align-items: flex-end;
+  margin-top: 30px;
 }
 .top__classBox__txtbox {
   background: #fff;
@@ -927,6 +1061,57 @@ button {
     line-height: 150%;
   }
 }
+.top__lesson__schedule table,
+.top__lesson__schedule td,
+.top__lesson__schedule th {
+  border-collapse: separate;
+  border-spacing: 2px;
+}
+.top__lesson__schedule td,
+.top__lesson__schedule th {
+  text-align: center;
+  padding: 3px;
+  width: 142px;
+}
+.top__lesson__schedule th {
+  background: #1a1a1a;
+  color: #fff;
+}
+@media (min-width: 960px) {
+  .top__lesson__schedule th {
+    padding: 11px 0;
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+}
+.top__lesson__schedule .noon td {
+  background: #f2f2f2;
+}
+@media (min-width: 960px) {
+  .top__lesson__schedule .noon td {
+    padding: 25px 0;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 180%;
+  }
+}
+.top__lesson__schedule .noon td.active {
+  background: rgba(225, 44, 109, 0.1490196078);
+}
+.top__lesson__schedule .night td {
+  background: #e6e6e6;
+}
+@media (min-width: 960px) {
+  .top__lesson__schedule .night td {
+    padding: 25px 0;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 180%;
+  }
+}
+.top__lesson__schedule .night td.active {
+  background: rgba(225, 44, 109, 0.3490196078);
+}
 @media (min-width: 960px) {
   .top__lesson__fee {
     margin: 50px 0;
@@ -974,6 +1159,40 @@ button {
     margin: 25px 0;
   }
 }
+.top__lesson__fee table,
+.top__lesson__fee td,
+.top__lesson__fee th {
+  border-collapse: separate;
+  border-spacing: 2px;
+  margin: auto;
+}
+.top__lesson__fee th {
+  background: #1a1a1a;
+  color: #fff;
+}
+@media (min-width: 960px) {
+  .top__lesson__fee th {
+    font-size: 18px;
+    font-size: 1.125rem;
+    padding: 10px 20px;
+  }
+}
+.top__lesson__fee td {
+  text-align: center;
+}
+@media (min-width: 960px) {
+  .top__lesson__fee td {
+    font-size: 18px;
+    font-size: 1.125rem;
+    padding: 10px 20px;
+  }
+}
+.top__lesson__fee .tr01 td {
+  background: rgba(225, 44, 109, 0.1490196078);
+}
+.top__lesson__fee .tr02 td {
+  background: #f2f2f2;
+}
 .top__lesson__fee--img {
   text-align: center;
   margin-bottom: 50px;
@@ -983,6 +1202,7 @@ button {
     font-size: 20px;
     font-size: 1.25rem;
     line-height: 160%;
+    margin-top: 50px;
   }
 }
 .top__lesson__fee--payment > .txt01 {
@@ -1035,21 +1255,19 @@ button {
   font-size: 1rem;
   margin-bottom: 15px;
   position: relative;
+  line-height: 160%;
+}
+.top__faq__inner--qu {
+  position: relative;
 }
 .top__faq__inner--qu:before {
   content: "Q.";
   font-family: "Noto Serif Display", serif, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
   font-size: 32px;
   font-size: 2rem;
+  padding-right: 5px;
 }
-.top__faq__inner--an:before {
-  content: "A.";
-  font-family: "Noto Serif Display", serif, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
-  font-size: 32px;
-  font-size: 2rem;
-  color: #E12C6D;
-}
-.top__faq__inner:after {
+.top__faq__inner--qu:after {
   content: "";
   background: url("/assets/img/common/ico_allow01.svg") no-repeat center;
   display: block;
@@ -1059,6 +1277,27 @@ button {
   top: 50%;
   right: 3%;
   transform: translate(0%, -50%);
+}
+.top__faq__inner--qu.is-open:after {
+  transform: rotate(180deg);
+}
+.top__faq__inner--an {
+  padding-left: 2.5em;
+  text-indent: -2.5em;
+  display: block;
+  padding-top: 20px;
+}
+.top__faq__inner--an:before {
+  content: "A.";
+  font-family: "Noto Serif Display", serif, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  font-size: 32px;
+  font-size: 2rem;
+  color: #E12C6D;
+  padding-right: 5px;
+}
+.top__faq__inner--an a {
+  color: #E12C6D;
+  border-bottom: solid 1px #E12C6D;
 }
 .top__faq__box {
   border: solid 1px #E12C6D;
@@ -1092,6 +1331,127 @@ button {
   font-size: 32px;
   font-size: 2rem;
 }
+.top__media {
+  padding-bottom: 100px;
+}
+.top__media .swiper {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 35px;
+}
+.top__media .swiper .swiper-slide {
+  position: relative;
+}
+.top__media .swiper .swiper-slide .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.top__media .swiper .mediaImg img {
+  width: 100%;
+  height: auto;
+}
+.top__media .swiper .swiper-pagination-bullet {
+  background-color: #d9d9d9;
+  opacity: 0.6;
+}
+.top__media .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #E12C6D;
+  opacity: 1;
+}
+.top__contact {
+  background: url("/assets/img/top/contact-bg.jpg") no-repeat;
+  background-size: 100%;
+}
+@media (min-width: 960px) {
+  .top__contact {
+    padding: 85px 0 135px;
+  }
+}
+.top__contactForm {
+  width: 60%;
+  margin: 0 auto;
+}
+@media (min-width: 960px) {
+  .top__contactForm__note {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 180%;
+    margin-bottom: 30px;
+  }
+}
+.top__contactForm__txt {
+  font-weight: bold;
+}
+@media (min-width: 960px) {
+  .top__contactForm__txt {
+    font-size: 16px;
+    font-size: 1rem;
+    margin: 30px 0 10px;
+  }
+}
+.top__contactForm input[type=text],
+.top__contactForm input[type=email],
+.top__contactForm textarea {
+  background: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  border: none;
+  transition: background-color 0.7s ease 0s;
+  width: 100%;
+  border-radius: 0.3rem;
+}
+@media (min-width: 960px) {
+  .top__contactForm input[type=text],
+  .top__contactForm input[type=email],
+  .top__contactForm textarea {
+    padding: 15px 10px;
+    font-size: 16px;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 959px) {
+  .top__contactForm input[type=text],
+  .top__contactForm input[type=email],
+  .top__contactForm textarea {
+    padding: 13px 10px;
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+}
+.top__contactForm input[type=text]:focus,
+.top__contactForm input[type=email]:focus,
+.top__contactForm textarea:focus {
+  outline: 0;
+  background: #eee;
+}
+.top__contactForm .submit {
+  text-align: center;
+  margin-top: 115px;
+}
+.top__contactForm .submit .wpcf7-submit {
+  color: #fff;
+  background: #E12C6D;
+  border: solid 2px #E12C6D;
+  border-radius: 50px;
+  padding: 20px 50px;
+  width: fit-content;
+  margin: 0 auto;
+  transition: background-color 0.2s ease 0s;
+  font-weight: bold;
+}
+@media (min-width: 960px) {
+  .top__contactForm .submit .wpcf7-submit {
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+}
+.top__contactForm .submit .wpcf7-submit:hover {
+  cursor: pointer;
+  background: #fff;
+  color: #E12C6D;
+}
+
 /* static index
 * ----------------
 * common
@@ -1173,6 +1533,36 @@ button {
 
 .modFV {
   position: relative;
+}
+.modMoreBtn {
+  color: #E12C6D;
+  font-family: "Noto Serif Display", serif, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  transition: 0.3s;
+  display: block;
+  width: fit-content;
+  margin: 50px 100px 0 auto;
+  transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+}
+@media (min-width: 960px) {
+  .modMoreBtn {
+    font-size: 24px;
+    font-size: 1.5rem;
+  }
+}
+.modMoreBtn:after {
+  content: "";
+  background: url("/assets/img/common/allow.svg") no-repeat;
+  width: 148px;
+  height: 12px;
+  display: block;
+}
+.modMoreBtn:hover {
+  opacity: 0.7;
+}
+.modMoreBtn:hover::after {
+  background: url("/assets/img/common/allow.svg") no-repeat;
+  animation: SlideInAllow 1s ease;
+  transform: none;
 }
 
 /*# sourceMappingURL=style.css.map */

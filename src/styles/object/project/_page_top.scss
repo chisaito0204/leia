@@ -1,8 +1,4 @@
 .top {
-	@include media(lg) {
-	}
-	@include media(sm) {
-	}
 	&__title {
 		text-align: center;
 		font-family: $noto;
@@ -11,18 +7,35 @@
 		justify-content: center;
 		gap: 30px;
 		color: #1a1a1a;
-		&.en {
-			font-family: $serif;
-		}
-		span {
-			@include fontsize(36);
-			font-family: $noto;
-		}
 		@include media(lg) {
-			@include fontsize(42);
+			@include fontsize(36);
 			margin-bottom: 50px;
 		}
 		@include media(sm) {
+		}
+		&.en {
+			font-family: $serif;
+			@include media(lg) {
+				@include fontsize(42);
+			}
+		}
+		.ja {
+			@include fontsize(36);
+			font-family: $noto;
+		}
+		.sub {
+			@include fontsize(16);
+			font-family: $noto;
+			display: block;
+			&:before {
+				content: "";
+				display: block;
+				background: $pink;
+				width: 75px;
+				height: 2px;
+				margin: 10px auto;
+				border-radius: 5px;
+			}
 		}
 	}
 	&__subtitle {
@@ -62,9 +75,15 @@
 	&__mv {
 		position: relative;
 		.swiper {
+			.mvImg{
+				animation: zoomUp 10s linear 0s 1 normal both;
+			}
 			img {
 				width: 100%;
 				height: 100vh;
+				@include media(sm) {
+					object-fit: cover;
+				}
 			}
 			.swiper-pagination-bullet {
 				background-color: #d9d9d9;
@@ -162,6 +181,9 @@
 			}
 			@include media(lg) {
 				margin-bottom: 80px;
+				&:last-of-type {
+					margin-bottom: 0;
+				}
 			}
 			img {
 				width: 100%;
@@ -300,8 +322,12 @@
 			align-items: flex-start;
 			gap: 30px;
 			&:nth-of-type(2) {
+				align-items: center;
+				margin-top: 30px;
+			}
+			&:nth-of-type(3) {
 				align-items: flex-end;
-				// margin-top: -30px;
+				margin-top: 30px;
 			}
 			&__txtbox {
 				background: #fff;
@@ -364,6 +390,49 @@
 					line-height: 150%;
 				}
 			}
+
+			table,
+			td,
+			th {
+				border-collapse: separate;
+				border-spacing: 2px;
+			}
+			td,
+			th {
+				text-align: center;
+				padding: 3px;
+				width: 142px;
+			}
+			th {
+				background: #1a1a1a;
+				color: #fff;
+				@include media(lg) {
+					padding: 11px 0;
+					@include fontsize(18);
+				}
+			}
+			.noon td {
+				background: #f2f2f2;
+				@include media(lg) {
+					padding: 25px 0;
+					@include fontsize(16);
+					line-height: 180%;
+				}
+				&.active {
+					background: #e12c6d26;
+				}
+			}
+			.night td {
+				background: #e6e6e6;
+				@include media(lg) {
+					padding: 25px 0;
+					@include fontsize(16);
+					line-height: 180%;
+				}
+				&.active {
+					background: #e12c6d59;
+				}
+			}
 		}
 		&__fee {
 			@include media(lg) {
@@ -402,6 +471,34 @@
 					margin: 25px 0;
 				}
 			}
+			table,
+			td,
+			th {
+				border-collapse: separate;
+				border-spacing: 2px;
+				margin: auto;
+			}
+			th {
+				background: #1a1a1a;
+				color: #fff;
+				@include media(lg) {
+					@include fontsize(18);
+					padding: 10px 20px;
+				}
+			}
+			td {
+				text-align: center;
+				@include media(lg) {
+					@include fontsize(18);
+					padding: 10px 20px;
+				}
+			}
+			.tr01 td {
+				background: #e12c6d26;
+			}
+			.tr02 td {
+				background: #f2f2f2;
+			}
 			&--img {
 				text-align: center;
 				margin-bottom: 50px;
@@ -410,6 +507,7 @@
 				@include media(lg) {
 					@include fontsize(20);
 					line-height: 160%;
+					margin-top: 50px;
 				}
 				> .txt01 {
 					position: relative;
@@ -460,31 +558,48 @@
 			@include fontsize(16);
 			margin-bottom: 15px;
 			position: relative;
+			line-height: 160%;
 			&--qu {
+				position: relative;
 				&:before {
 					content: "Q.";
 					font-family: $serif;
 					@include fontsize(32);
+					padding-right: 5px;
+				}
+				&:after {
+					content: "";
+					background: url("/assets/img/common/ico_allow01.svg") no-repeat center;
+					display: block;
+					width: 16px;
+					height: 10px;
+					position: absolute;
+					top: 50%;
+					right: 3%;
+					transform: translate(0%, -50%);
+				}
+				&.is-open {
+					&:after {
+						transform: rotate(180deg);
+					}
 				}
 			}
 			&--an {
+				padding-left: 2.5em;
+				text-indent: -2.5em;
+				display: block;
+				padding-top: 20px;
 				&:before {
 					content: "A.";
 					font-family: $serif;
 					@include fontsize(32);
 					color: $pink;
+					padding-right: 5px;
 				}
-			}
-			&:after {
-				content: "";
-				background: url("/assets/img/common/ico_allow01.svg") no-repeat center;
-				display: block;
-				width: 16px;
-				height: 10px;
-				position: absolute;
-				top: 50%;
-				right: 3%;
-				transform: translate(0%, -50%);
+				a {
+					color: $pink;
+					border-bottom: solid 1px $pink;
+				}
 			}
 		}
 		&__box {
@@ -519,6 +634,107 @@
 			}
 		}
 	}
+	&__media {
+		padding-bottom: 100px;
+		.swiper {
+			width: 80%;
+			margin: 0 auto;
+			padding-bottom: 35px;
+			.swiper-slide {
+				position: relative;
+				.btn {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
+			}
+			.mediaImg {
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+			.swiper-pagination-bullet {
+				background-color: #d9d9d9;
+				opacity: 0.6;
+				&.swiper-pagination-bullet-active {
+					background-color: $pink;
+					opacity: 1;
+				}
+			}
+		}
+	}
 	&__contact {
+		background: url("/assets/img/top/contact-bg.jpg") no-repeat;
+		background-size: 100%;
+		@include media(lg) {
+			padding: 85px 0 135px;
+		}
+		@include media(sm) {
+		}
+		&Form {
+			width: 60%;
+			margin: 0 auto;
+			&__note {
+				@include media(lg) {
+					@include fontsize(16);
+					line-height: 180%;
+					margin-bottom: 30px;
+				}
+			}
+			&__txt {
+				font-weight: bold;
+				@include media(lg) {
+					@include fontsize(16);
+					margin: 30px 0 10px;
+				}
+			}
+			input[type="text"],
+			input[type="email"],
+			textarea {
+				background: #fff;
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+				border: none;
+				transition: background-color 0.7s ease 0s;
+				width: 100%;
+				border-radius: 0.3rem;
+				@include media(lg) {
+					padding: 15px 10px;
+					@include fontsize(16);
+				}
+				@include media(sm) {
+					padding: 13px 10px;
+					@include fontsize(14);
+				}
+				&:focus {
+					outline: 0;
+					background: #eee;
+				}
+			}
+			.submit {
+				text-align: center;
+				margin-top: 115px;
+				.wpcf7-submit {
+					color: #fff;
+					background: $pink;
+					border: solid 2px $pink;
+					border-radius: 50px;
+					padding: 20px 50px;
+					width: fit-content;
+					margin: 0 auto;
+					transition: background-color 0.2s ease 0s;
+					font-weight: bold;
+					@include media(lg) {
+						@include fontsize(18);
+					}
+					&:hover {
+						cursor: pointer;
+						background: #fff;
+						color: $pink;
+					}
+				}
+			}
+		}
 	}
 }
