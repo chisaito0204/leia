@@ -1,6 +1,129 @@
-.about{
+.about {
 	@include media(lg) {
 	}
 	@include media(sm) {
+	}
+	&__contents {
+		@include media(lg) {
+			margin-top: 100px;
+		}
+		@include media(sm) {
+		}
+		&Box {
+			display: flex;
+			justify-content: center;
+			align-items: flex-end;
+			gap: 50px;
+			@include media(lg) {
+				margin-bottom: 150px;
+			}
+			&__img {
+				position: relative;
+				// flex: 0 0 40%;
+				img{
+					width: 100%;
+					height: auto;
+				}
+				&Cap {
+					&--en{
+						font-family: $baby;
+						color: $pink;
+						position: absolute;
+						@include media(lg) {
+							@include fontsize(50);
+							top: -50px;
+							right: -100px;
+						}
+						@include media(sm) {
+							@include fontsize(25);
+						}
+					}
+					&--num{
+						font-family: $poppins;
+						color: $pink;
+						opacity: 0.3;
+						position: absolute;
+						@include media(lg) {
+							@include fontsize(80);
+							top: -60px;
+							right: -210px;
+						}
+						@include media(sm) {
+							@include fontsize(40);
+						}
+					}
+					&--txt {
+						background: $pink;
+						color: #fff;
+						font-family: $noto;
+						font-weight: bold;
+						padding: 20px 30px;
+						text-align: center;
+						display: inline-block;
+						position: absolute;
+						@include media(lg) {
+							@include fontsize(18);
+							top: 20px;
+							right: -230px;
+						}
+						@include media(sm) {
+							@include fontsize(16);
+						}
+					}
+				}
+			}
+			&:nth-of-type(2n){
+				.about__contentsBox__imgCap--en{
+					@include media(lg) {
+						top: -45px;
+						left: -40px;
+						right: auto;
+					}
+					@include media(sm) {
+						@include fontsize(25);
+					}
+				}
+				.about__contentsBox__imgCap--num{
+					@include media(lg) {
+						top: -70px;
+						left: -150px;
+						right: auto;
+					}
+					@include media(sm) {
+					}
+				}
+				.about__contentsBox__imgCap--txt{
+					@include media(lg) {
+						top: 20px;
+						left:-150px;
+						right: auto;
+						padding: 20px 50px;
+					}
+					@include media(sm) {
+					}
+				}
+			}
+			&:nth-of-type(5){
+				.about__contentsBox__imgCap--txt{
+					@include media(lg) {
+						top: 20px;
+						right: -210px;
+						padding: 20px 50px;
+					}
+					@include media(sm) {
+					}
+				}
+			}
+			&__text {
+				flex: 0 0 40%;
+				@include media(lg) {
+					@include fontsize(16);
+					line-height: 200%;
+				}
+				@include media(sm) {
+					@include fontsize(14);
+				}
+			}
+		}
 	}
 }

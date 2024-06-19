@@ -83,33 +83,96 @@
 	//FV
 	&FV {
 		position: relative;
-		&__KV {
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-end;
+		margin-top: 150px;
+		img{
+			width: auto;
+			height: auto;
 		}
 	}
-	&MoreBtn{
+	&Title {
+		font-family: $noto;
+		@include media(lg) {
+			@include fontsize(42);
+			margin-bottom: 85px;
+			margin-right: -45px;
+		}
+		.en {
+			font-family: $serif;
+		}
+	}
+	&SubTitle {
+		font-family: $serif;
+		@include media(lg) {
+			@include fontsize(32);
+			color: $pink;
+			position: absolute;
+			top: 50px;
+			left: 12%;
+			border-left: solid 1px $pink;
+			padding-left: 8px;
+			display: block;
+			writing-mode: vertical-rl;
+			height: 281px;
+		}
+	}
+	&Text{
+		text-align: center;
+		font-family: $noto;
+		@include media(lg) {
+			@include fontsize(20);
+			line-height: 180%;
+			margin: 80px 0 100px;
+		}
+	}
+	&BandImg{
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+	&MoreBtn {
 		color: $pink;
 		font-family: $serif;
 		transition: 0.3s;
 		display: block;
 		width: fit-content;
-		margin: 50px 100px 0 auto;
 		transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
 		@include media(lg) {
 			@include fontsize(24);
+			margin: 50px 100px 0 auto;
 		}
-		&:after{
-			content: '';
-			background: url('/assets/img/common/allow.svg') no-repeat;
+		@include media(sm) {
+			@include fontsize(16);
+			margin: 30px 20px 0 auto;
+		}
+		&:after {
+			content: "";
+			background: url("/assets/img/common/allow.svg") no-repeat;
 			width: 148px;
 			height: 12px;
 			display: block;
+			@include media(sm) {
+				background: url("/assets/img/common/allow-sp.svg") no-repeat;
+				width: 106px;
+				height: 7px;
+				background-size: 100%;
+			}
 		}
-		&:hover{
+		&:hover {
 			opacity: 0.7;
 			&::after {
-				background: url('/assets/img/common/allow.svg') no-repeat;
+				background: url("/assets/img/common/allow.svg") no-repeat;
 				animation: SlideInAllow 1s ease;
 				transform: none;
+				@include media(sm) {
+					background: url("/assets/img/common/allow-sp.svg") no-repeat;
+					width: 106px;
+					height: 7px;
+					background-size: 100%;
+				}
 			}
 		}
 	}

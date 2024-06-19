@@ -32,8 +32,10 @@ $(document).ready(function() {
  *********************/
 
 window.addEventListener("scroll", function () {
+if ( window.innerWidth > 959 ) {
   const header = document.querySelector("header");
   header.classList.toggle("scroll-nav", window.scrollY > 500);
+ }
 });
 
 
@@ -41,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var spMenuBtn = document.querySelector('.header__spMenuBtn');
   var bodyHtml = document.querySelectorAll('body, html');
   var spSideMenu = document.querySelector('.header__spSideMenu');
+  var body = document.body;
 
   if (spMenuBtn) {
     spMenuBtn.addEventListener('click', function () {
@@ -53,6 +56,14 @@ document.addEventListener('DOMContentLoaded', function () {
       if (spSideMenu) {
         spSideMenu.classList.toggle('is-open');
       }
+      if (spMenuBtn.classList.contains('is-open')) {
+        body.style.position = 'fixed';
+        body.style.top = '0';
+      } else {
+        body.style.position = '';
+        body.style.top = '';
+      }
+      
     });
   }
 });
@@ -65,9 +76,9 @@ const mvSwiper = new Swiper('.top__mv .swiper', {
     loop: true,
     slidesPerView: 1,
     effect: 'fade',
-    speed: 1000,
+    speed: 2000,
     autoplay: {
-      delay: 10000,
+      delay: 5000,
       disableOnInteraction: false
     },
     pagination: {
@@ -90,6 +101,44 @@ const mediaSwiper = new Swiper('.top__media .swiper', {
     clickable: true,
   },
 });
+
+const breakPoint = 767;
+let recommendSwiper;
+let mySwiperBool;
+
+window.addEventListener('load', () => {
+  if (breakPoint < window.innerWidth) {
+    mySwiperBool = false;
+  } else {
+    createSwiper();
+    mySwiperBool = true;
+  }
+}, false);
+
+window.addEventListener('resize', () => {
+  if (breakPoint < window.innerWidth && mySwiperBool) {
+    recommendSwiper.destroy(false, true);
+    mySwiperBool = false;
+  } else if (breakPoint >= window.innerWidth && !(mySwiperBool)) {
+    createSwiper();
+    mySwiperBool = true;
+  }
+}, false);
+
+const createSwiper = () => {
+  recommendSwiper = new Swiper('.top__blog .swiper', {
+    loop: true,
+    slidesPerView: 1.2,
+    centeredSlides : true,
+    spaceBetween: 12,
+    speed: 2000,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true,
+    },
+  });
+}
 
 
 /*********************

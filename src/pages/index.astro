@@ -24,6 +24,16 @@ import Layout from "../layouts/Layout.astro";
                 <img src="/assets/img/top/mv03.jpg" alt="ジャズダンス" width="1440" height="810" />
               </figure>
             </h1>
+            <h1 class="swiper-slide">
+              <figure class="mvImg">
+                <img src="/assets/img/top/mv04.jpg" alt="ジャズダンス" width="1440" height="810" />
+              </figure>
+            </h1>
+            <h1 class="swiper-slide">
+              <figure class="mvImg">
+                <img src="/assets/img/top/mv05.jpg" alt="ジャズダンス" width="1440" height="810" />
+              </figure>
+            </h1>
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -46,12 +56,12 @@ import Layout from "../layouts/Layout.astro";
           </a>
         </div>
 
-        <div class="top__mv__banner">
+        <a href="" class="top__mv__banner">
           <figure class="bnImg">
             <img src="/assets/img/common/icon_dance.svg" alt="" width="46" height="46" />
           </figure>
-          <p class="">見学、体験レッスン随時募集中！</p>
-        </div>
+          <p class="">見学、体験レッスンはこちらから！</p>
+        </a>
       </section>
       <!-- / MV -->
 
@@ -93,8 +103,8 @@ import Layout from "../layouts/Layout.astro";
           </p>
           <figure class="aboutImg">
             <img src="/assets/img/top/about02.png" alt="" width="793" height="508" />
+            <p class="top__aboutBox__txt02">Jazz Dance</p>
           </figure>
-          <p class="top__aboutBox__txt02">Jazz Dance</p>
         </div>
 
         <div class="top__aboutBox">
@@ -102,7 +112,7 @@ import Layout from "../layouts/Layout.astro";
             <img src="/assets/img/top/about03.png" alt="" width="793" height="508" />
           </figure>
           <p class="top__aboutBox__txt01">
-            懐かしい往年のミュージカルナンバーや名曲をベースに<br />
+            懐かしい往年のミュージカルナンバーや名曲をベースに<br class="lg-only" />
             <span>ミュージカル・商業公演で披露したダンス</span>を踊ってみませんか？
           </p>
         </div>
@@ -119,31 +129,40 @@ import Layout from "../layouts/Layout.astro";
           <figure><img src="/assets/img/common/ttl_dec-right.svg" alt="" width="158" height="45" /></figure>
         </h2>
 
-        <div class="top__blogBox">
-          <a href="" class="top__blogBox__article">
-            <figure><img src="/assets/img/top/thumb.jpg" alt="" width="360" height="246" /></figure>
-            <div class="top__blogBox__articleTags">
-              <p class="top__blogBox__articleTags--tag">タグ</p>
-              <p class="top__blogBox__articleTags--date">2024/01/01</p>
+        <div class="top__blogBox swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="" class="top__blogBox__article">
+                <figure><img src="/assets/img/top/thumb.jpg" alt="" width="360" height="246" /></figure>
+                <div class="top__blogBox__articleTags">
+                  <p class="top__blogBox__articleTags--tag">タグ</p>
+                  <p class="top__blogBox__articleTags--date">2024/01/01</p>
+                </div>
+                <p class="top__blogBox__articleTxt">タイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入る</p>
+              </a>
             </div>
-            <p class="top__blogBox__articleTxt">タイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入る</p>
-          </a>
-          <a href="" class="top__blogBox__article">
-            <figure><img src="/assets/img/top/thumb.jpg" alt="" width="360" height="246" /></figure>
-            <div class="top__blogBox__articleTags">
-              <p class="top__blogBox__articleTags--tag">タグ</p>
-              <p class="top__blogBox__articleTags--date">2024/01/01</p>
+            <div class="swiper-slide">
+              <a href="" class="top__blogBox__article">
+                <figure><img src="/assets/img/top/thumb.jpg" alt="" width="360" height="246" /></figure>
+                <div class="top__blogBox__articleTags">
+                  <p class="top__blogBox__articleTags--tag">タグ</p>
+                  <p class="top__blogBox__articleTags--date">2024/01/01</p>
+                </div>
+                <p class="top__blogBox__articleTxt">タイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入る</p>
+              </a>
             </div>
-            <p class="top__blogBox__articleTxt">タイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入る</p>
-          </a>
-          <a href="" class="top__blogBox__article">
-            <figure><img src="/assets/img/top/thumb.jpg" alt="" width="360" height="246" /></figure>
-            <div class="top__blogBox__articleTags">
-              <p class="top__blogBox__articleTags--tag">タグ</p>
-              <p class="top__blogBox__articleTags--date">2024/01/01</p>
+            <div class="swiper-slide">
+              <a href="" class="top__blogBox__article">
+                <figure><img src="/assets/img/top/thumb.jpg" alt="" width="360" height="246" /></figure>
+                <div class="top__blogBox__articleTags">
+                  <p class="top__blogBox__articleTags--tag">タグ</p>
+                  <p class="top__blogBox__articleTags--date">2024/01/01</p>
+                </div>
+                <p class="top__blogBox__articleTxt">タイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入る</p>
+              </a>
             </div>
-            <p class="top__blogBox__articleTxt">タイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入るタイトル入る</p>
-          </a>
+          </div>
+          <div class="swiper-pagination"></div>
         </div>
         <a href="" class="modMoreBtn">Read More</a>
       </section>
@@ -187,7 +206,7 @@ import Layout from "../layouts/Layout.astro";
           <div class="top__classBox__txtbox">
             <p class="top__classBox__txtbox--ttl">ワンクラスでも初心者大歓迎!!</p>
             <p class="top__classBox__txtbox--txt">
-              レベルに合わせた振り付けで、基礎から丁攣に指導します。<br />
+              レベルに合わせた振り付けで、<br class="sm-only" />基礎から丁攣に指導します。<br />
               練習する作品も生徒さんのペースを見ながら定期的に変えていくので、<br />
               色々な作品を踊ることができます。
             </p>
@@ -206,7 +225,7 @@ import Layout from "../layouts/Layout.astro";
             <p class="top__classBox__txtbox--ttl">豊富な経験と実績</p>
             <p class="top__classBox__txtbox--txt">
               河野麻耶は舞踊歴40年以上のベテランであり、<br />多くの受賞歴や公演出演経験を持っています。<br />
-              その豊富な経験と実績に基づいた指導は、初心者から上級者まで、各レベルの生徒に対応できます。
+              その豊富な経験と実績に基づいた指導は、<br class="sm-only" />初心者から上級者まで、各レベルの生徒に対応できます。
             </p>
             <p class="top__classBox__txtbox--dec">Experienced</p>
           </div>
@@ -214,12 +233,9 @@ import Layout from "../layouts/Layout.astro";
 
         <div class="top__classBox">
           <div class="top__classBox__txtbox">
-            <p class="top__classBox__txtbox--ttl">豊富な経験と実績</p>
-            <p class="top__classBox__txtbox--txt">
-              河野麻耶は舞踊歴40年以上のベテランであり、<br />多くの受賞歴や公演出演経験を持っています。<br />
-              その豊富な経験と実績に基づいた指導は、初心者から上級者まで、各レベルの生徒に対応できます。
-            </p>
-            <p class="top__classBox__txtbox--dec">Experienced</p>
+            <p class="top__classBox__txtbox--ttl">アットホームな雰囲気</p>
+            <p class="top__classBox__txtbox--txt">レイアダンススタジオは、10代から70代まで幅広い年齢層の生徒が通うアットホームな雰囲気です。初心者でも安心して参加できるよう、基礎から丁寧に指導する体制が整っています。</p>
+            <p class="top__classBox__txtbox--dec">Homey</p>
           </div>
           <figure class="top__classBox__img">
             <img src="/assets/img/top/class03.jpg" alt="" width="588" height="315" />
@@ -239,66 +255,71 @@ import Layout from "../layouts/Layout.astro";
 
         <h3 class="top__subtitle">︎<span>Schedule</span></h3>
         <div class="top__lesson__schedule">
-          <p class="top__lesson__schedule--ttl">自由ヶ丘スタジオ</p>
-          <!-- <figure>
-            <img src="/assets/img/top/schedule.jpg" alt="スケジュール" width="1016" height="283" />
-          </figure> -->
-          <table>
-            <tbody>
-              <tr>
-                <th>月曜日</th>
-                <th>火曜日</th>
-                <th>水曜日</th>
-                <th>木曜日</th>
-                <th>金曜日</th>
-                <th>土曜日</th>
-                <th>日曜日</th>
-              </tr>
-              <tr class="noon">
-                <td></td>
-                <td class="active">昼クラス<br />11:20-12:40</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td class="active">昼クラス<br />11:20-12:40</td>
-              </tr>
-              <tr class="night">
-                <td></td>
-                <td class="active">夜クラス<br />19:20-20:40</td>
-                <td></td>
-                <td></td>
-                <td class="active">夜クラス<br />19:20-20:40</td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-
-          <p class="top__lesson__schedule--note">
-            ※場所：自由ヶ丘ダンススタジオ JDS/東京都目黒区自由が丘1-3-22 / 自由ヶ丘駅徒歩5分<br />
-            ※各レッスンは80分間です（スタジオは2時間かりていますので、20分前から入室できます）<br />
-            ※レッスン時間の前後の各20分間で着替え、準備、チケットの購入等をお願いいたします。
-          </p>
+          <div class="top__lesson__scheduleInner">
+            <table>
+              <tbody>
+                <tr>
+                  <th>月曜日</th>
+                  <th>火曜日</th>
+                  <th>水曜日</th>
+                  <th>木曜日</th>
+                  <th>金曜日</th>
+                  <th>土曜日</th>
+                  <th>日曜日</th>
+                </tr>
+                <tr class="noon">
+                  <td></td>
+                  <td class="active">昼クラス<br />11:20-12:40</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td class="active">昼クラス<br />11:20-12:40</td>
+                </tr>
+                <tr class="night">
+                  <td></td>
+                  <td class="active">夜クラス<br />19:20-20:40</td>
+                  <td></td>
+                  <td></td>
+                  <td class="active">夜クラス<br />19:20-20:40</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+
+        <p class="top__lesson__schedule--note">
+          ※場所：自由ヶ丘ダンススタジオ JDS/東京都目黒区自由が丘1-3-22 / 自由ヶ丘駅徒歩5分<br />
+          ※各レッスンは80分間です（スタジオは2時間かりていますので、20分前から入室できます）<br />
+          ※レッスン時間の前後の各20分間で着替え、準備、チケットの購入等をお願いいたします。
+        </p>
 
         <h3 class="top__subtitle">︎<span>料金</span></h3>
         <div class="top__lesson__fee">
           <div class="top__lesson__feeBox">
-            <figure>
+            <figure class="iconImg01">
               <img src="/assets/img/top/ico_dance.svg" alt="" width="113" height="113" />
             </figure>
             <div>
-              <p class="top__lesson__feeBox--ttl">体験レッスン・ビジター ￥3,300円（税込）</p>
+              <p class="top__lesson__feeBox--ttl">体験レッスン・ビジター <br class="sm-only" />￥3,300円（税込）</p>
               <p class="top__lesson__feeBox--note">
-                ※チケットを買う前に一度体験してみたい、ビジターで1回まずはレッスンしたいという方、大歓迎です<br />
-                ※体験レッスンでは動きやすい服装でお越しください<br />
-                ※レッスン風景の写真撮影及び動画撮影はお断りしております
+                <span class="lg-only">
+                  ※チケットを買う前に一度体験してみたい、ビジターで1回まずはレッスンしたいという方、大歓迎です<br />
+                  ※体験レッスンでは動きやすい服装でお越しください<br />
+                  ※レッスン風景の写真撮影及び動画撮影はお断りしております
+                </span>
               </p>
             </div>
           </div>
+          <p class="top__lesson__feeBox--notesp sm-only">
+            <span class="indent01">※チケットを買う前に一度体験してみたい、ビジターで1回まずはレッスンしたいという方、大歓迎です</span>
+            <span class="indent01">※体験レッスンでは動きやすい服装でお越しください</span>
+            <span class="indent01">※レッスン風景の写真撮影及び動画撮影はお断りしております</span>
+          </p>
           <div class="top__lesson__feeBox">
-            <figure>
+            <figure class="iconImg02">
               <img src="/assets/img/top/ico_yen.svg" alt="" width="73" height="73" />
             </figure>
             <div>
@@ -349,12 +370,13 @@ import Layout from "../layouts/Layout.astro";
             <span class="txt01">お支払い方法</span><br />
             <span class="txt02">現金または銀行振込となります。</span><br />
             クレジットカード払いやキャッシュレス払いには現在対応しておりません。<br />
-            <span class="txt03">※旧・金光郁子舞踊学園、ザ・クリエイトハウスの銀行口座に振り込まないようご注意下さい。</span><br />
             <br />
-            ◎お振り込み口座銀行：三井住友銀行支店：横浜支店（322）<br />
-            口座番号：(普通) 921877<br />
-            口座名義：Studio Leia 河野 麻耶<br />
-            口座名義（カナ）：スタジオ レイア コウノ マヤ
+            <span class="txt03">
+              ◎お振り込み口座銀行：三井住友銀行支店：横浜支店（322）<br />
+              口座番号：(普通) 921877<br />
+              口座名義：Studio Leia 河野 麻耶<br />
+              口座名義（カナ）：スタジオ レイア コウノ マヤ
+            </span>
           </p>
         </div>
 
@@ -419,7 +441,7 @@ import Layout from "../layouts/Layout.astro";
           <figure><img src="/assets/img/common/ttl_dec-right.svg" alt="" width="158" height="45" /></figure>
         </h2>
 
-        <div class="swiper">
+        <div class="swiper lg-only">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <figure class="mediaImg">
@@ -471,6 +493,33 @@ import Layout from "../layouts/Layout.astro";
             </div>
           </div>
           <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="top__media__sp sm-only">
+          <div class="top__media__spVideo">
+            <figure class="mediaImg">
+              <img src="/assets/img/top/media01.jpg" alt="過去メディア動画" width="406" height="228" />
+            </figure>
+            <figure class="btn">
+              <img src="/assets/img/common/load.svg" alt="再生ボタン" width="52" height="52" />
+            </figure>
+          </div>
+          <div class="top__media__spVideo">
+            <figure class="mediaImg">
+              <img src="/assets/img/top/media02.jpg" alt="過去メディア動画" width="406" height="228" />
+            </figure>
+            <figure class="btn">
+              <img src="/assets/img/common/load.svg" alt="再生ボタン" width="52" height="52" />
+            </figure>
+          </div>
+          <div class="top__media__spVideo">
+            <figure class="mediaImg">
+              <img src="/assets/img/top/media03.jpg" alt="過去メディア動画" width="406" height="228" />
+            </figure>
+            <figure class="btn">
+              <img src="/assets/img/common/load.svg" alt="再生ボタン" width="52" height="52" />
+            </figure>
+          </div>
         </div>
 
         <a href="" class="modMoreBtn">Read More</a>

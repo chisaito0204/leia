@@ -24,6 +24,7 @@
     &.scroll-nav {
         .header__content {
             padding: 5px 60px;
+            background: rgba(255, 255, 255, 0.05);
         }
         .header__logo {
             .logo {
@@ -32,6 +33,16 @@
         }
         .header__nav {
             color: #1a1a1a;
+        }
+    }
+    &.notop{
+        // トップページ以外
+        .header__content {
+            background: rgba(225, 44, 109, 0.12);
+        }
+        .header__nav{
+            color: #1a1a1a;
+            text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
         }
     }
     &__content {
@@ -145,19 +156,25 @@
         display: none;
         &.is-open {
             display: block;
-            background: $pink;
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
             position: fixed;
             top: 0;
             right: 0;
+            max-width: 100%;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        &--container {
+            background: $pink;
             width: 80%;
             height: 100vh;
             overflow: scroll;
             animation: SlideIn 0.5s;
+            margin-left: auto;
         }
         &__list {
-            width: calc(100% - 20px);
-            margin: 85px auto 0;
+            width: calc(100% - 60px);
+            margin: 60px auto 0;
         }
         &__item {
             width: 40%;
@@ -171,60 +188,13 @@
             font-family: $noto;
             @include fontsize(16);
             font-weight: 400;
-            line-height: 200%;
-            letter-spacing: 0.64px; 
-            &--txt {
-                position: relative;
-                &::after {
-                    content: "";
-                    width: 8px;
-                    height: 8px;
-                    position: absolute;
-                    display: inline-block;
-                    border-top: solid 1px #333;
-                    border-right: solid 1px #333;
-                    top: 50%;
-                    right: 10px;
-                    transform: translate(-50%, -50%) rotate(135deg);
-                }
-                &.is-open {
-                    &::after {
-                        transform: translate(-50%, -50%) rotate(-45deg);
-                    }
-                }
-            }
-            &--txtbox {
-                // padding:20px 0;
-                height: 0;
-                opacity: 0;
-                overflow: hidden;
-                transition:
-                    padding 0.5s,
-                    height 0.5s,
-                    opacity 0.5s;
-                &.is-open {
-                    height: 130px;
-                    padding: 20px 0 24px;
-                    opacity: 1;
-                }
-            }
-            &--intxt {
-                color: #666;
-                font-family: $noto;
-                @include fontsize(14);
-                font-weight: 400;
-                line-height: 160%;
-                letter-spacing: 0.56px;
-                margin-bottom: 16px;
-                &:last-of-type {
-                    margin-bottom: 0;
-                }
-            }
+            line-height: 160%;
+            letter-spacing: 0.64px;
         }
         &__sns {
             display: flex;
             align-items: center;
-            margin-top: 60px;
+            margin-top: 30px;
             justify-content: center;
             gap: 20px;
             a {
@@ -232,6 +202,16 @@
                     width: 26px;
                     height: auto;
                 }
+            }
+        }
+        &__txt{
+            color: #fff;
+            margin-top: 30px;
+            @include fontsize(14);
+            text-align: center;
+            > a{
+                border-bottom: solid 1px #fff;
+                font-weight: bold;
             }
         }
     }

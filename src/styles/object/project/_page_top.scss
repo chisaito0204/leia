@@ -5,28 +5,42 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		gap: 30px;
 		color: #1a1a1a;
 		@include media(lg) {
 			@include fontsize(36);
 			margin-bottom: 50px;
+			gap: 30px;
 		}
 		@include media(sm) {
+			@include fontsize(20);
+			margin-bottom: 25px;
+			gap: 10px;
 		}
 		&.en {
 			font-family: $serif;
 			@include media(lg) {
 				@include fontsize(42);
 			}
+			@include media(sm) {
+				@include fontsize(22);
+			}
 		}
 		.ja {
-			@include fontsize(36);
 			font-family: $noto;
+			@include media(lg) {
+				@include fontsize(36);
+			}
+			@include media(sm) {
+				@include fontsize(20);
+			}
 		}
 		.sub {
 			@include fontsize(16);
 			font-family: $noto;
 			display: block;
+			@include media(sm) {
+				@include fontsize(12);
+			}
 			&:before {
 				content: "";
 				display: block;
@@ -37,6 +51,11 @@
 				border-radius: 5px;
 			}
 		}
+		figure {
+			@include media(sm) {
+				width: 14%;
+			}
+		}
 	}
 	&__subtitle {
 		font-family: $serif;
@@ -45,6 +64,9 @@
 			@include fontsize(36);
 		}
 		@include media(sm) {
+			@include fontsize(18);
+			width: 90%;
+			margin-left: auto;
 		}
 		> span {
 			position: relative;
@@ -60,6 +82,12 @@
 			left: -15px;
 			bottom: -5px;
 			z-index: 0;
+			@include media(sm) {
+				width: 12px;
+				height: 12px;
+				left: -8px;
+				bottom: -1px;
+			}
 		}
 		&:after {
 			content: "";
@@ -70,20 +98,25 @@
 			position: absolute;
 			bottom: -8px;
 			left: 25px;
+			@include media(sm) {
+				width: 83px;
+				bottom: -4px;
+				left: 15px;
+			}
 		}
 	}
 	&__mv {
 		position: relative;
 		.swiper {
-			.mvImg{
-				animation: zoomUp 10s linear 0s 1 normal both;
+			.swiper-slide-active .mvImg,
+			.swiper-slide-duplicate-active .mvImg,
+			.swiper-slide-prev .mvImg {
+				animation: zoomUp 7s linear 0s normal both;
 			}
 			img {
 				width: 100%;
 				height: 100vh;
-				@include media(sm) {
-					object-fit: cover;
-				}
+				object-fit: cover;
 			}
 			.swiper-pagination-bullet {
 				background-color: #d9d9d9;
@@ -115,7 +148,7 @@
 			position: fixed;
 			top: 80%;
 			right: 0;
-			z-index: 10;
+			z-index: 30;
 			font-weight: 600;
 			background-image: linear-gradient(
 				117deg,
@@ -125,11 +158,21 @@
 			);
 			display: flex;
 			align-items: center;
-			padding: 20px 13px 20px 15px;
 			@include media(lg) {
 				@include fontsize(14);
+				padding: 20px 13px 20px 15px;
 			}
 			@include media(sm) {
+				@include fontsize(14);
+				padding: 8px 0;
+				top: auto;
+				right: auto;
+				bottom: 0;
+				justify-content: center;
+				width: 100%;
+				img {
+					width: 70%;
+				}
 			}
 		}
 	}
@@ -141,22 +184,27 @@
 			border-radius: 0.5rem;
 			margin: 100px auto;
 			padding: 30px 40px;
+			@include media(sm) {
+				padding: 15px 20px;
+			}
 			&__ttl {
 				text-align: center;
-				margin-bottom: 20px;
 				@include media(lg) {
 					@include fontsize(20);
 					font-weight: 600;
+					margin-bottom: 20px;
 				}
 				@include media(sm) {
+					font-weight: 500;
 					@include fontsize(18);
+					margin-bottom: 10px;
 				}
 			}
 			&__txt {
+				line-height: 1.5;
 				@include media(lg) {
 					@include fontsize(16);
 					font-weight: 400;
-					line-height: 1.5;
 				}
 				@include media(sm) {
 					@include fontsize(14);
@@ -168,11 +216,26 @@
 		&Box {
 			display: flex;
 			gap: 60px;
-			position: relative;
+			@include media(sm) {
+				margin-top: 30px;
+				gap: 30px;
+				flex-direction: column;
+				&:nth-of-type(2) {
+					flex-direction: column-reverse;
+					figure {
+						text-align: right;
+					}
+				}
+			}
 			&:nth-of-type(2) {
 				justify-content: flex-end;
 				.top__aboutBox__txt01 {
 					flex: 0 0 35%;
+					margin-right: 36px;
+					margin-left: 10px;
+				}
+				.aboutImg {
+					position: relative;
 				}
 			}
 			&:nth-of-type(3) {
@@ -188,6 +251,9 @@
 			img {
 				width: 100%;
 				height: auto;
+				@include media(sm) {
+					width: 75%;
+				}
 			}
 			&__txt01 {
 				@include media(lg) {
@@ -195,6 +261,12 @@
 					line-height: 200%;
 					flex: 0 0 45%;
 					text-wrap: pretty;
+				}
+				@include media(sm) {
+					@include fontsize(14);
+					line-height: 180%;
+					margin-left: 36px;
+					margin-right: 10px;
 				}
 				> span {
 					color: $pink;
@@ -205,11 +277,15 @@
 				position: absolute;
 				font-family: $serif;
 				color: #afafb0;
-				bottom: -8%;
-				left: 50%;
-				transform: translate(-50%, 0%);
 				@include media(lg) {
 					@include fontsize(80);
+					bottom: -8%;
+					left: -21%;
+				}
+				@include media(sm) {
+					@include fontsize(32);
+					bottom: -10px;
+					left: 12%;
 				}
 			}
 		}
@@ -217,11 +293,30 @@
 	&__blog {
 		margin: 100px 0;
 		&Box {
-			display: flex;
-			justify-content: center;
-			gap: 50px;
+			@include media(sm) {
+				padding-bottom: 40px;
+			}
+			.swiper-wrapper {
+				@include media(lg) {
+					display: flex;
+					justify-content: center;
+					gap: 50px;
+				}
+			}
+			.swiper-slide {
+				@include media(lg) {
+					flex: 0 0 25%;
+				}
+			}
+			.swiper-pagination-bullet {
+				background-color: #d9d9d9;
+				opacity: 0.6;
+				&.swiper-pagination-bullet-active {
+					background-color: $pink;
+					opacity: 1;
+				}
+			}
 			&__article {
-				flex: 0 0 25%;
 				img {
 					width: 100%;
 					height: auto;
@@ -239,10 +334,17 @@
 							@include fontsize(14);
 							padding: 7px 10px;
 						}
+						@include media(sm) {
+							@include fontsize(13);
+							padding: 4px 8px;
+						}
 					}
 					&--date {
 						@include media(lg) {
 							@include fontsize(18);
+						}
+						@include media(sm) {
+							@include fontsize(14);
 						}
 					}
 				}
@@ -258,6 +360,11 @@
 						line-height: 150%;
 						font-weight: 600;
 					}
+					@include media(sm) {
+						@include fontsize(16);
+						line-height: 160%;
+						font-weight: 600;
+					}
 				}
 			}
 		}
@@ -265,14 +372,25 @@
 	&__teacher {
 		margin-bottom: 100px;
 		&Box {
-			display: flex;
-			justify-content: center;
-			gap: 100px;
+			@include media(lg) {
+				display: flex;
+				justify-content: center;
+				gap: 100px;
+			}
+			@include media(sm) {
+				width: 90%;
+				margin: 0 auto;
+			}
 			&__prof {
 				flex: 0 0 25%;
 				background: rgba(225, 44, 109, 0.1);
 				height: 360px;
 				position: relative;
+				@include media(sm) {
+					width: 230px;
+					height: 230px;
+					margin: auto;
+				}
 				> img {
 					width: 100%;
 					height: auto;
@@ -286,15 +404,24 @@
 				flex: 0 0 35%;
 				&--name {
 					border-bottom: solid 1px $pink;
+					width: 50%;
 					@include media(lg) {
 						@include fontsize(32);
 						line-height: 150%;
 						margin-bottom: 40px;
 					}
+					@include media(sm) {
+						@include fontsize(26);
+						margin-top: 50px;
+						line-height: 150%;
+					}
 					> span {
+						font-family: $serif;
 						@include media(lg) {
-							@include fontsize(28);
-							font-family: $serif;
+							@include fontsize(26);
+						}
+						@include media(sm) {
+							@include fontsize(24);
 						}
 					}
 				}
@@ -302,11 +429,16 @@
 					@include media(lg) {
 						@include fontsize(16);
 						line-height: 200%;
-						> a {
-							color: $pink;
-							font-weight: bold;
-							border-bottom: solid 1px $pink;
-						}
+					}
+					@include media(sm) {
+						@include fontsize(14);
+						line-height: 200%;
+						margin-top: 15px;
+					}
+					> a {
+						color: $pink;
+						font-weight: bold;
+						border-bottom: solid 1px $pink;
 					}
 				}
 			}
@@ -316,11 +448,23 @@
 		background: rgba(225, 44, 109, 0.1);
 		padding: 120px 0;
 		margin-bottom: 80px;
+		@include media(sm) {
+			padding: 40px 0;
+		}
 		&Box {
 			display: flex;
 			justify-content: center;
 			align-items: flex-start;
 			gap: 30px;
+			@include media(sm) {
+				width: 90%;
+				margin: auto;
+				flex-direction: column;
+				gap: 22px;
+				&:nth-of-type(2) {
+					flex-direction: column-reverse;
+				}
+			}
 			&:nth-of-type(2) {
 				align-items: center;
 				margin-top: 30px;
@@ -337,17 +481,29 @@
 				position: relative;
 				flex: 0 0 43%;
 				text-wrap: pretty;
+				@include media(sm) {
+					padding: 30px 25px;
+				}
 				&--ttl {
+					font-weight: 600;
 					@include media(lg) {
 						@include fontsize(24);
-						font-weight: 600;
 						margin-bottom: 20px;
+					}
+					@include media(sm) {
+						@include fontsize(18);
+						margin-bottom: 10px;
 					}
 				}
 				&--txt {
 					@include media(lg) {
 						@include fontsize(16);
 						line-height: 180%;
+					}
+					@include media(sm) {
+						@include fontsize(14);
+						line-height: 170%;
+						// text-wrap: pretty;
 					}
 				}
 				&--dec {
@@ -360,17 +516,37 @@
 					@include media(lg) {
 						@include fontsize(60);
 					}
+					@include media(sm) {
+						@include fontsize(30);
+					}
+				}
+			}
+			&__img {
+				img {
+					width: 100%;
+					height: auto;
 				}
 			}
 		}
 	}
 	&__lesson {
-		width: 70%;
-		margin: 0 auto 100px;
+		@include media(lg) {
+			width: 70%;
+			margin: 0 auto 100px;
+		}
 		&__schedule {
 			width: 80%;
-			margin: 40px auto 60px;
-
+			margin: 40px auto 15px;
+			overflow-x: auto;
+			@include media(sm) {
+				width: 90%;
+				margin: 40px auto 18px;
+			}
+			&Inner {
+				@include media(sm) {
+					min-width: 1013px;
+				}
+			}
 			img {
 				width: 100%;
 				height: auto;
@@ -388,9 +564,16 @@
 					@include fontsize(13);
 					margin-top: 15px;
 					line-height: 150%;
+					width: 80%;
+					margin: 0 auto 60px;
+				}
+				@include media(sm) {
+					@include fontsize(12);
+					line-height: 180%;
+					width: 90%;
+					margin: 0 auto 40px;
 				}
 			}
-
 			table,
 			td,
 			th {
@@ -410,11 +593,20 @@
 					padding: 11px 0;
 					@include fontsize(18);
 				}
+				@include media(sm) {
+					padding: 10px 0;
+					@include fontsize(16);
+				}
 			}
 			.noon td {
 				background: #f2f2f2;
 				@include media(lg) {
 					padding: 25px 0;
+					@include fontsize(16);
+					line-height: 180%;
+				}
+				@include media(sm) {
+					padding: 20px 0;
 					@include fontsize(16);
 					line-height: 180%;
 				}
@@ -429,6 +621,11 @@
 					@include fontsize(16);
 					line-height: 180%;
 				}
+				@include media(sm) {
+					padding: 20px 0;
+					@include fontsize(16);
+					line-height: 180%;
+				}
 				&.active {
 					background: #e12c6d59;
 				}
@@ -440,26 +637,80 @@
 			}
 			&Box {
 				background: url("/assets/img/top/ticket.png") no-repeat;
-				background-image: 100%;
+				background-size: 100%;
 				display: flex;
 				align-items: center;
 				gap: 70px;
-				padding: 33px;
+				@include media(lg) {
+					padding: 33px;
+				}
+				@include media(sm) {
+					background: url("/assets/img/top/sp/ticket.png") no-repeat;
+					background-size: cover;
+					padding: 26px 20px;
+					gap: 45px;
+					&:nth-of-type(2){
+						padding: 31px 22px;
+					}
+					
+				}
 				&:nth-of-type(2) {
-					padding: 60px;
+					@include media(lg) {
+						padding: 60px;
+					}
+				}
+				.iconImg01 {
+					@include media(lg) {
+						width: 6.5vw;
+					}
+					@include media(sm) {
+						width: 15vw;
+					}
+					> img {
+						width: 100%;
+						height: auto;
+					}
+				}
+				.iconImg02 {
+					@include media(lg) {
+						width: 4vw;
+					}
+					@include media(sm) {
+						width: 12vw;
+					}
+					> img {
+						width: 100%;
+						height: auto;
+					}
 				}
 				&--ttl {
 					font-family: $noto;
 					@include media(lg) {
-						@include fontsize(24);
+						font-size: 1.6vw;
+						line-height: 170%;
+					}
+					@include media(sm) {
+						@include fontsize(18);
 						line-height: 170%;
 					}
 				}
 				&--note {
 					font-family: $noto;
 					@include media(lg) {
-						@include fontsize(16);
+						@include fontsize(14);
+						font-size: 1vw;
 						line-height: 170%;
+					}
+					@include media(sm) {
+						@include fontsize(13);
+					}
+				}
+				&--notesp{
+					@include media(sm) {
+						@include fontsize(13);
+						line-height: 150%;
+						width: 90%;
+						margin: 5px auto 20px;
 					}
 				}
 			}
@@ -469,6 +720,9 @@
 				@include media(lg) {
 					@include fontsize(22);
 					margin: 25px 0;
+				}
+				@include media(sm) {
+					margin: 48px 0 15px;
 				}
 			}
 			table,
@@ -485,12 +739,20 @@
 					@include fontsize(18);
 					padding: 10px 20px;
 				}
+				@include media(sm) {
+					@include fontsize(14);
+					padding: 8px 10px;
+				}
 			}
 			td {
 				text-align: center;
 				@include media(lg) {
 					@include fontsize(18);
 					padding: 10px 20px;
+				}
+				@include media(sm) {
+					@include fontsize(14);
+					padding: 8px 10px;
 				}
 			}
 			.tr01 td {
@@ -508,6 +770,12 @@
 					@include fontsize(20);
 					line-height: 160%;
 					margin-top: 50px;
+				}
+				@include media(sm) {
+					@include fontsize(16);
+					line-height: 160%;
+					width: 90%;
+					margin: 20px auto 40px 35px;
 				}
 				> .txt01 {
 					position: relative;
@@ -529,20 +797,35 @@
 					@include media(lg) {
 						@include fontsize(16);
 					}
+					@include media(sm) {
+						@include fontsize(14);
+					}
 				}
 			}
 		}
 		&__access {
 			margin-top: 50px;
+			@include media(sm) {
+				width: 90%;
+				margin: 30px auto 60px;
+			}
 			&--txt {
 				@include media(lg) {
 					@include fontsize(18);
 					line-height: 170%;
 					margin-bottom: 30px;
 				}
+				@include media(sm) {
+					@include fontsize(16);
+					line-height: 170%;
+					margin-bottom: 20px;
+				}
 				> a {
 					border-bottom: solid 1px #1a1a1a;
 				}
+			}
+			iframe {
+				width: 100%;
 			}
 		}
 	}
@@ -559,13 +842,29 @@
 			margin-bottom: 15px;
 			position: relative;
 			line-height: 160%;
+			@include media(sm) {
+				width: 90%;
+				@include fontsize(14);
+				padding: 10px 20px;
+			}
 			&--qu {
 				position: relative;
+				display: flex;
+				align-items: baseline;
+				.qu {
+					display: inline-block;
+					@include media(sm) {
+						width: 90%;
+					}
+				}
 				&:before {
 					content: "Q.";
 					font-family: $serif;
 					@include fontsize(32);
 					padding-right: 5px;
+					@include media(sm) {
+						@include fontsize(22);
+					}
 				}
 				&:after {
 					content: "";
@@ -577,6 +876,10 @@
 					top: 50%;
 					right: 3%;
 					transform: translate(0%, -50%);
+					@include media(sm) {
+						background-size: 80%;
+						right: 0;
+					}
 				}
 				&.is-open {
 					&:after {
@@ -589,12 +892,18 @@
 				text-indent: -2.5em;
 				display: block;
 				padding-top: 20px;
+				@include media(sm) {
+					padding-top: 10px;
+				}
 				&:before {
 					content: "A.";
 					font-family: $serif;
 					@include fontsize(32);
 					color: $pink;
 					padding-right: 5px;
+					@include media(sm) {
+						@include fontsize(22);
+					}
 				}
 				a {
 					color: $pink;
@@ -664,6 +973,19 @@
 				}
 			}
 		}
+		&__sp{
+			&Video{
+				position: relative;
+				width: 90%;
+				margin: 0 auto 15px;
+				.btn {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
+			}
+		}
 	}
 	&__contact {
 		background: url("/assets/img/top/contact-bg.jpg") no-repeat;
@@ -672,15 +994,27 @@
 			padding: 85px 0 135px;
 		}
 		@include media(sm) {
+			padding: 60px 0;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: left;
 		}
 		&Form {
 			width: 60%;
 			margin: 0 auto;
+			@include media(sm) {
+				width: 90%;
+			}
 			&__note {
 				@include media(lg) {
 					@include fontsize(16);
 					line-height: 180%;
 					margin-bottom: 30px;
+				}
+				@include media(sm) {
+					@include fontsize(14);
+					line-height: 180%;
+					margin-bottom: 15px;
 				}
 			}
 			&__txt {
@@ -688,6 +1022,10 @@
 				@include media(lg) {
 					@include fontsize(16);
 					margin: 30px 0 10px;
+				}
+				@include media(sm) {
+					@include fontsize(15);
+					margin: 20px 0 10px;
 				}
 			}
 			input[type="text"],
@@ -715,6 +1053,9 @@
 			.submit {
 				text-align: center;
 				margin-top: 115px;
+				@include media(sm) {
+					margin-top: 40px;
+				}
 				.wpcf7-submit {
 					color: #fff;
 					background: $pink;
@@ -727,6 +1068,10 @@
 					font-weight: bold;
 					@include media(lg) {
 						@include fontsize(18);
+					}
+					@include media(sm) {
+						padding: 20px 40px;
+						@include fontsize(16);
 					}
 					&:hover {
 						cursor: pointer;
