@@ -382,9 +382,9 @@
 				margin: 0 auto;
 			}
 			&__prof {
-				flex: 0 0 25%;
+				flex: 0 0 30%;
 				background: rgba(225, 44, 109, 0.1);
-				height: 360px;
+				height: 450px;
 				position: relative;
 				@include media(sm) {
 					width: 230px;
@@ -401,14 +401,20 @@
 				}
 			}
 			&__txtbox {
-				flex: 0 0 35%;
+				flex: 0 0 43%;
+				&--ttl {
+					@include media(lg) {
+						@include fontsize(36);
+						margin-bottom: 60px;
+					}
+				}
 				&--name {
 					border-bottom: solid 1px $pink;
 					width: 50%;
 					@include media(lg) {
 						@include fontsize(32);
 						line-height: 150%;
-						margin-bottom: 40px;
+						margin-bottom: 30px;
 					}
 					@include media(sm) {
 						@include fontsize(26);
@@ -429,17 +435,74 @@
 					@include media(lg) {
 						@include fontsize(16);
 						line-height: 200%;
+						margin-bottom: 20px;
 					}
 					@include media(sm) {
 						@include fontsize(14);
 						line-height: 200%;
 						margin-top: 15px;
 					}
+					> li {
+						padding-left: 1em;
+						text-indent: -1em;
+						display: block;
+						&:before {
+							content: "";
+							background: #e12c6d;
+							width: 6px;
+							height: 6px;
+							border-radius: 50%;
+							display: inline-block;
+							margin-right: 5px;
+							margin-bottom: 3px;
+						}
+					}
 					> a {
 						color: $pink;
 						font-weight: bold;
 						border-bottom: solid 1px $pink;
 					}
+				}
+			}
+		}
+	}
+	&__voice {
+		margin-bottom: 100px;
+		&__box {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 60px;
+			margin-bottom: 100px;
+			@include media(sm) {
+				gap: 30px;
+				width: 90%;
+				margin: 0 auto 30px;
+			}
+			&--txt {
+				background: #fce9f0;
+				border-radius: 1rem;
+				position: relative;
+				@include media(lg) {
+					flex: 0 0 50%;
+					padding: 45px;
+					@include fontsize(16);
+					line-height: 160%;
+				}
+				@include media(sm) {
+					padding: 20px;
+					@include fontsize(14);
+					line-height: 160%;
+					flex: 0 0 70%;
+				}
+				&:before {
+					content: "";
+					position: absolute;
+					top: 65%;
+					left: -30px;
+					margin-top: -15px;
+					border: 15px solid transparent;
+					border-right: 15px solid #fce9f0;
 				}
 			}
 		}
@@ -537,15 +600,9 @@
 		&__schedule {
 			width: 80%;
 			margin: 40px auto 15px;
-			overflow-x: auto;
 			@include media(sm) {
 				width: 90%;
 				margin: 40px auto 18px;
-			}
-			&Inner {
-				@include media(sm) {
-					min-width: 1013px;
-				}
 			}
 			img {
 				width: 100%;
@@ -630,6 +687,151 @@
 					background: #e12c6d59;
 				}
 			}
+			&Sp {
+				.week {
+					font-family: $noto;
+					&__ttl {
+						color: #fff;
+						text-align: center;
+						background: #1a1a1a;
+						@include fontsize(16);
+						line-height: 160%;
+						padding: 5px 0;
+						margin-bottom: 3px;
+					}
+					&__desc {
+						text-align: center;
+						padding: 13px 0;
+						background: #f2f2f2;
+						margin-bottom: 3px;
+						@include fontsize(18);
+						&:nth-of-type(2) {
+							background: #e6e6e6;
+						}
+						strong {
+							font-weight: 600;
+						}
+						&.on {
+							background: rgba(225, 44, 109, 0.15);
+							padding: 20px 0;
+							&:nth-of-type(2) {
+								background: rgba(225, 44, 109, 0.35);
+							}
+						}
+					}
+				}
+			}
+		}
+		&__flow {
+			@include media(lg) {
+				margin: 100px 0;
+			}
+			@include media(sm) {
+				width: 90%;
+				margin: 0 auto;
+			}
+			&--ttl {
+				text-align: center;
+				font-family: $noto;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 12px;
+				@include media(lg) {
+					@include fontsize(30);
+					margin-bottom: 30px;
+				}
+				@include media(sm) {
+					@include fontsize(18);
+				}
+				&:before,
+				&:after {
+					content: "";
+					display: inline-block;
+					background: url("/assets/img/common/ico-nyoro.svg") no-repeat;
+					width: 41px;
+					height: 12px;
+				}
+			}
+			&--txt {
+				@include media(lg) {
+					@include fontsize(18);
+					margin-bottom: 20px;
+				}
+				@include media(sm) {
+					@include fontsize(16);
+					margin: 15px 0;
+				}
+			}
+			&--box {
+				@include media(lg) {
+					display: flex;
+					gap: 20px;
+					margin-bottom: 32px;
+				}
+				&Img {
+					@include media(sm) {
+						img {
+							width: 100%;
+						}
+					}
+				}
+				&Txt {
+					@include media(lg) {
+						@include fontsize(16);
+						line-height: 160%;
+					}
+					@include media(sm) {
+						@include fontsize(14);
+						line-height: 160%;
+						margin: 10px 0 20px;
+					}
+				}
+			}
+		}
+		&__rule {
+			@include media(lg) {
+				margin-bottom: 100px;
+			}
+			@include media(sm) {
+				width: 90%;
+				margin: 0 auto;
+			}
+			&--ttl {
+				text-align: center;
+				font-family: $noto;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 12px;
+				@include media(lg) {
+					@include fontsize(30);
+					margin-bottom: 30px;
+				}
+				@include media(sm) {
+					@include fontsize(18);
+				}
+				&:before,
+				&:after {
+					content: "";
+					display: inline-block;
+					background: url("/assets/img/common/ico-nyoro.svg") no-repeat;
+					width: 41px;
+					height: 12px;
+				}
+			}
+			&--txt {
+				font-family: $noto;
+				@include media(lg) {
+					@include fontsize(16);
+					line-height: 200%;
+				}
+				@include media(sm) {
+					@include fontsize(14);
+					line-height: 180%;
+					margin: 10px 0 30px;
+				}
+			}
 		}
 		&__fee {
 			@include media(lg) {
@@ -642,29 +844,28 @@
 				align-items: center;
 				gap: 70px;
 				@include media(lg) {
-					padding: 33px;
+					padding: 33px 33px 33px 48px;
 				}
 				@include media(sm) {
 					background: url("/assets/img/top/sp/ticket.png") no-repeat;
 					background-size: cover;
-					padding: 26px 20px;
+					padding: 26px 20px 26px 26px;
 					gap: 45px;
-					&:nth-of-type(2){
+					&:nth-of-type(1) {
 						padding: 31px 22px;
 					}
-					
 				}
-				&:nth-of-type(2) {
+				&:nth-of-type(1) {
 					@include media(lg) {
 						padding: 60px;
 					}
 				}
 				.iconImg01 {
 					@include media(lg) {
-						width: 6.5vw;
+						width: 5.5vw;
 					}
 					@include media(sm) {
-						width: 15vw;
+						width: 10vw;
 					}
 					> img {
 						width: 100%;
@@ -703,9 +904,12 @@
 					}
 					@include media(sm) {
 						@include fontsize(13);
+						line-height: 160%;
+						width: 95%;
+						margin: 0 auto 20px;
 					}
 				}
-				&--notesp{
+				&--notesp {
 					@include media(sm) {
 						@include fontsize(13);
 						line-height: 150%;
@@ -731,13 +935,18 @@
 				border-collapse: separate;
 				border-spacing: 2px;
 				margin: auto;
+				margin-bottom: 50px;
+				@include media(sm) {
+					margin-bottom: 20px;
+				}
 			}
 			th {
 				background: #1a1a1a;
 				color: #fff;
 				@include media(lg) {
 					@include fontsize(18);
-					padding: 10px 20px;
+					padding: 15px 20px;
+					width: 27.5%;
 				}
 				@include media(sm) {
 					@include fontsize(14);
@@ -748,7 +957,7 @@
 				text-align: center;
 				@include media(lg) {
 					@include fontsize(18);
-					padding: 10px 20px;
+					padding: 15px 20px;
 				}
 				@include media(sm) {
 					@include fontsize(14);
@@ -826,6 +1035,20 @@
 			}
 			iframe {
 				width: 100%;
+			}
+			&--box {
+				@include media(lg) {
+					display: flex;
+					justify-content: center;
+					gap: 20px;
+					margin-top: 100px;
+				}
+				> p {
+					font-family: $noto;
+					@include media(lg) {
+						@include fontsize(16);
+					}
+				}
 			}
 		}
 	}
@@ -973,8 +1196,8 @@
 				}
 			}
 		}
-		&__sp{
-			&Video{
+		&__sp {
+			&Video {
 				position: relative;
 				width: 90%;
 				margin: 0 auto 15px;
@@ -1000,7 +1223,7 @@
 			background-position: left;
 		}
 		&Form {
-			width: 60%;
+			width: 70%;
 			margin: 0 auto;
 			@include media(sm) {
 				width: 90%;
@@ -1061,7 +1284,7 @@
 					background: $pink;
 					border: solid 2px $pink;
 					border-radius: 50px;
-					padding: 20px 50px;
+					padding: 15px 50px;
 					width: fit-content;
 					margin: 0 auto;
 					transition: background-color 0.2s ease 0s;

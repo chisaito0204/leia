@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="TOP" description="">
+<Layout title="" description="">
   <main slot="body">
     <div class="about">
       <div class="modFV">
@@ -13,10 +13,10 @@ import Layout from "../layouts/Layout.astro";
         </figure>
       </div>
       <p class="modText">
-        自由ヶ丘で本格的なジャズダンス、ミュージカル・ショーダンスを中心に<br />
+        自由ヶ丘で本格的なジャズダンス、<br class="sm-only">ミュージカル・ショーダンスを中心に<br />
         親切・丁寧に教えております。ジャズダンスを元に<br />
-        フラメンコ、フラダンス、タップなど様々なダンスを融合した金光ダンスを、<br />
-        初心者始め経験者も含めて幅広く楽しく往年の名曲をベースに、ミュージカル・商業公演で<br />
+        フラメンコ、フラダンス、タップなど様々なダンスを<br class="sm-only">融合した金光ダンスを、<br />
+        初心者始め経験者も含めて幅広く楽しく<br class="sm-only">往年の名曲をベースに、ミュージカル・商業公演で<br />
         披露したダンスを踊ってみませんか？
       </p>
 
@@ -38,7 +38,8 @@ import Layout from "../layouts/Layout.astro";
         </div>
 
         <div class="about__contentsBox">
-          <div class="about__contentsBox__text">教師の河野麻耶（こうのまや）は、祖母でもある金光郁子のもとで1歳よりダンスを学びダンス一家の血を受け継ぎました。舞踊歴は40年以上にわたります。日本ジャズダンス芸術協会主催コンクールにて1991年ジュニアの部次点、1996年成人部門特別賞、2002年アダルト部門第1位、2007年にはコンクール最高位のグランプリを受賞。前身である金光郁子舞踊学園での商業講演や発表会、外部公演にも積極的に参加し豊富な経験を持っています。年齢関係なく楽しく踊れる雰囲気のクラス作りを大切に考えています。</div>
+          <div class="about__contentsBox__text">  
+            教師の<a href="/teacher">河野麻耶（こうのまや）</a>は、祖母・金光郁子のもとで1歳よりダンスを学びダンス一家の血を受け継ぎました。舞踊歴は40年以上。日本ジャズダンス芸術協会主催コンクールにて1991年ジュニアの部次点、1996年成人部門特別賞、2002年アダルト部門第1位、2007年にはコンクール最高位のグランプリを受賞。同ダンスコンクールの審査員も昨今は務めています。前身である金光郁子舞踊学園での商業講演や発表会、（一社）日本ジャズダンス芸術協会主催公演は30回以上出演、その他外部公演にも積極的に参加し豊富な経験があります。</div>
           <figure class="about__contentsBox__img">
             <figcaption class="about__contentsBox__imgCap">
               <p class="about__contentsBox__imgCap--en">Experienced</p>
@@ -85,7 +86,10 @@ import Layout from "../layouts/Layout.astro";
           <div class="about__contentsBox__text">ダンスを通じて、体の内側からも美しくなることを目指しています。
             ファッションやメイクなどの表面的な美しさだけではなく、姿勢や立ち振る舞いなど内面的な美しさが備わります。姿勢の改善や筋力の向上、柔軟性の強化だけでなく、心と体の健康を向上させる効果があります。スタジオでの時間は、日々のストレスを忘れ、心身をリフレッシュさせる貴重なひととき。美しい所作や凛とした姿勢を身につけ、健康で輝く自分を手に入れましょう。音楽に合わせて楽しく体を動かし、ポジティブなエネルギーで毎日をより豊かにします。</div>
         </div>
+        <a href="/class" class="about__link">クラスの詳細はこちら</a>
       </div>
+
+      
     </div>
   </main>
 </Layout>

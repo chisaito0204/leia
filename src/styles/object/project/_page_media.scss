@@ -1,0 +1,49 @@
+.media {
+	&__contents {
+		width: 70%;
+		margin: 100px auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		@include media(sm) {
+			width: 100%;
+			margin: 50px auto;
+		}
+		img {
+			width: 100%;
+			height: auto;
+		}
+		&__movie {
+			flex: 0 0 48%;
+			margin-bottom: 30px;
+			&:first-of-type {
+				flex: 0 0 100%;
+			}
+		}
+		&--txtbox {
+			margin-top: 24px;
+			@include media(lg) {
+				display: flex;
+			}
+		}
+		&--ttl {
+			@include fontsize(18);
+			line-height: 160%;
+			font-weight: bold;
+			@include media(sm) {
+				@include fontsize(16);
+				line-height: 160%;
+			}
+		}
+		&--date {
+			@include fontsize(16);
+			@include media(lg) {
+				margin-left: 15px;
+			}
+			@include media(sm) {
+				@include fontsize(14);
+				margin-top: 5px;
+			}
+		}
+	}
+}

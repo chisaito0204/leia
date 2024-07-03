@@ -83,21 +83,38 @@
 	//FV
 	&FV {
 		position: relative;
-		display: flex;
-		justify-content: flex-end;
-		align-items: flex-end;
-		margin-top: 150px;
-		img{
+		@include media(lg) {
+			margin-top: 150px;
+			display: flex;
+			justify-content: flex-end;
+			align-items: flex-end;
+		}
+		@include media(sm) {
+			padding-top: 150px;
+		}
+		img {
 			width: auto;
 			height: auto;
+			@include media(sm) {
+				display: block;
+				width: 90%;
+				margin-left: auto;
+			}
 		}
 	}
 	&Title {
 		font-family: $noto;
+		flex: 0 0 35%;
 		@include media(lg) {
 			@include fontsize(42);
 			margin-bottom: 85px;
 			margin-right: -45px;
+		}
+		@include media(sm) {
+			@include fontsize(26);
+			text-align: right;
+			margin-right: 10px;
+			margin-bottom: 20px;
 		}
 		.en {
 			font-family: $serif;
@@ -105,20 +122,57 @@
 	}
 	&SubTitle {
 		font-family: $serif;
-		@include media(lg) {
-			@include fontsize(32);
-			color: $pink;
-			position: absolute;
-			top: 50px;
-			left: 12%;
-			border-left: solid 1px $pink;
-			padding-left: 8px;
-			display: block;
-			writing-mode: vertical-rl;
-			height: 281px;
+		@include fontsize(32);
+		color: $pink;
+		position: absolute;
+		top: 50px;
+		left: 12%;
+		border-left: solid 1px $pink;
+		padding-left: 8px;
+		display: block;
+		writing-mode: vertical-rl;
+		height: 281px;
+		@include media(sm) {
+			@include fontsize(20);
+			top: 100px;
+			left: 5%;
+			height: 200px;
 		}
 	}
-	&Text{
+	&Tttlbox {
+		width: 70%;
+		margin: 200px auto 50px;
+		@include media(sm) {
+			width: 90%;
+			margin: 110px auto 30px;
+		}
+		&--ttl {
+			font-family: $serif;
+			@include media(lg) {
+				@include fontsize(52);
+				margin-bottom: 30px;
+			}
+			@include media(sm) {
+				@include fontsize(32);
+				margin-bottom: 15px;
+			}
+		}
+		&--subttl {
+			font-family: $noto;
+			border-bottom: solid 1px $pink;
+			padding-bottom: 10px;
+			@include media(lg) {
+				@include fontsize(20);
+				width: 20%;
+			}
+			@include media(sm) {
+				@include fontsize(16);
+				width: 60%;
+			}
+		}
+	}
+
+	&Text {
 		text-align: center;
 		font-family: $noto;
 		@include media(lg) {
@@ -126,11 +180,25 @@
 			line-height: 180%;
 			margin: 80px 0 100px;
 		}
+		@include media(sm) {
+			@include fontsize(14);
+			line-height: 180%;
+			margin: 50px 0;
+		}
+		> a {
+			color: $pink;
+			font-weight: bold;
+			border-bottom: solid 1px $pink;
+		}
 	}
-	&BandImg{
-		img{
+	&BandImg {
+		img {
 			width: 100%;
 			height: auto;
+			@include media(sm) {
+				 aspect-ratio: 3/1;
+				 object-fit: cover;
+			}
 		}
 	}
 	&MoreBtn {
@@ -174,6 +242,150 @@
 					background-size: 100%;
 				}
 			}
+		}
+	}
+}
+
+// ページャー
+.pagination {
+	display: flex;
+	align-items: center;
+	position: relative;
+	color: $pink;
+	font-family: $poppins;
+	font-weight: 500;
+	@include media(sm) {
+		justify-content: center;
+	}
+	li .page-numbers,
+	.next a,
+	.pre a {
+		border: solid 1px $pink;
+		background: #fff;
+		text-align: center;
+		color: $pink;
+		display: block;
+		@include media(lg) {
+			width: 35px;
+			height: 40px;
+			line-height: 40px;
+			@include fontsize(18);
+		}
+		@include media(sm) {
+			width: 35px;
+			height: 40px;
+			line-height: 40px;
+			@include fontsize(16);
+		}
+	}
+	li.active .page-numbers {
+		border: solid 1px $pink;
+		background: $pink;
+		color: #fff;
+	}
+	li {
+		@include media(lg) {
+			margin-left: 20px;
+		}
+		@include media(sm) {
+			margin-left: 15px;
+		}
+		&:first-of-type {
+			margin-left: 0;
+		}
+	}
+}
+.navi {
+	display: flex;
+	align-items: center;
+	position: relative;
+	color: $pink;
+	font-family: $poppins;
+	font-weight: 500;
+	@include media(lg) {
+		margin-top: 50px;
+	}
+	@include media(sm) {
+		justify-content: center;
+		margin-top: 50px;
+	}
+	.num {
+		text-align: center;
+		&:hover {
+			opacity: 0.8;
+		}
+		@include media(lg) {
+			width: 35px;
+			height: 40px;
+			line-height: 40px;
+			@include fontsize(18);
+			margin-right: 20px;
+		}
+		@include media(sm) {
+			width: 35px;
+			height: 40px;
+			line-height: 40px;
+			@include fontsize(16);
+			margin-right: 15px;
+		}
+	}
+	p {
+		background: $pink;
+		color: #fff;
+	}
+	a.num {
+		border: solid 1px $pink;
+		background: #fff;
+		color: $pink;
+	}
+	span {
+		font-weight: bold;
+		@include media(lg) {
+			@include fontsize(16);
+			margin-right: 20px;
+		}
+		@include media(sm) {
+			@include fontsize(14);
+			margin-right: 15px;
+			// margin-left: 15px;
+		}
+	}
+	.prev {
+		margin-top: 0.5%;
+		// margin-right: 40px;
+		&:hover {
+			opacity: 0.8;
+		}
+		@include media(sm) {
+			display: none;
+			&.detail {
+				display: block;
+			}
+		}
+		&Txt {
+			@include fontsize(14);
+			color: #000;
+			font-weight: 400;
+			margin: 3px 20px 0;
+		}
+	}
+	.next {
+		margin-top: 0.5%;
+		margin-left: 20px;
+		&:hover {
+			opacity: 0.8;
+		}
+		@include media(sm) {
+			display: none;
+			&.detail {
+				display: block;
+			}
+		}
+		&Txt {
+			@include fontsize(14);
+			color: #000;
+			font-weight: 400;
+			margin: 3px 20px 0;
 		}
 	}
 }
