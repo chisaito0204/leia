@@ -5,26 +5,4 @@
 	@include media(sm) {
 		margin-bottom: 80px;
 	}
-	&__sns{
-		margin-top: 60px;
-		&__txt{
-			text-align: center;
-			@include media(lg) {
-				@include fontsize(16);
-				line-height: 160%;
-				margin-bottom: 20px;
-			}
-			@include media(sm) {
-				@include fontsize(14);
-				line-height: 180%;
-				margin-bottom: 30px;
-			}
-		}
-		&Links{
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			gap: 30px;
-		}
-	}
 }

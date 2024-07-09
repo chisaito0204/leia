@@ -1,4 +1,8 @@
 .media {
+	margin-bottom: 100px;
+	@include media(sm) {
+		margin-bottom: 80px;
+	}
 	&__contents {
 		width: 70%;
 		margin: 100px auto;
@@ -6,7 +10,7 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		@include media(sm) {
-			width: 100%;
+			width: 90%;
 			margin: 50px auto;
 		}
 		img {

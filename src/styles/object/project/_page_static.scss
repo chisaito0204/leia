@@ -192,6 +192,7 @@
 		}
 	}
 	&BandImg {
+		margin-bottom: 70px;
 		img {
 			width: 100%;
 			height: auto;
@@ -223,7 +224,7 @@
 			height: 12px;
 			display: block;
 			@include media(sm) {
-				background: url("/assets/img/common/allow-sp.svg") no-repeat;
+				background: url("/assets/img/common/allow-small.svg") no-repeat;
 				width: 106px;
 				height: 7px;
 				background-size: 100%;
@@ -242,6 +243,28 @@
 					background-size: 100%;
 				}
 			}
+		}
+	}
+	&Sns{
+		margin-top: 60px;
+		&__txt{
+			text-align: center;
+			@include media(lg) {
+				@include fontsize(16);
+				line-height: 160%;
+				margin-bottom: 20px;
+			}
+			@include media(sm) {
+				@include fontsize(14);
+				line-height: 180%;
+				margin-bottom: 30px;
+			}
+		}
+		&Links{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 30px;
 		}
 	}
 }

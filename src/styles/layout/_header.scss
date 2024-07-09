@@ -24,7 +24,7 @@
     &.scroll-nav {
         .header__content {
             padding: 5px 60px;
-            background: rgba(255, 255, 255, 0.05);
+            background: #FCE9F0;
         }
         .header__logo {
             .logo {
@@ -39,7 +39,7 @@
         // トップページ以外
         .header__content {
             @include media(lg) {
-                background: rgba(225, 44, 109, 0.12);
+                background: #FCE9F0;
             }
         }
         .header__nav {
@@ -99,6 +99,7 @@
             }
         }
         &__item {
+            font-weight: 600;
             &.ja {
                 font-family: $noto;
             }

@@ -61,6 +61,7 @@
 			background: #fce9f0;
 			border-radius: 1rem;
 			position: relative;
+			text-align: left;
 			@include media(lg) {
 				@include fontsize(18);
 				line-height: 200%;
