@@ -84,7 +84,7 @@
         @include media(lg) {
             color: #333;
             text-align: center;
-            font-family: $serif;
+            font-family: $noto;
             @include fontsize(14);
             color: #fff;
             font-weight: 400;

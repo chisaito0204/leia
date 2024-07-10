@@ -239,7 +239,7 @@ button {
   .header__nav {
     color: #333;
     text-align: center;
-    font-family: "Noto Serif Display", serif, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+    font-family: "Noto Sans", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
     font-size: 14px;
     font-size: 0.875rem;
     color: #fff;
@@ -1008,8 +1008,8 @@ button {
 }
 @media (min-width: 960px) {
   .top__aboutBox__txt01 {
-    font-size: 20px;
-    font-size: 1.25rem;
+    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 200%;
     flex: 0 0 45%;
     text-wrap: pretty;
@@ -4360,6 +4360,71 @@ button {
     margin-bottom: 40px;
   }
 }
+.lp__pose {
+  text-align: center;
+}
+.lp__pose--ttl {
+  font-weight: bold;
+}
+@media (min-width: 960px) {
+  .lp__pose--ttl {
+    font-size: 26px;
+    font-size: 1.625rem;
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 959px) {
+  .lp__pose--ttl {
+    font-size: 18px;
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+  }
+}
+.lp__pose--txt {
+  color: #E12C6D;
+}
+@media (min-width: 960px) {
+  .lp__pose--txt {
+    font-size: 18px;
+    font-size: 1.125rem;
+    margin-bottom: 28px;
+  }
+}
+@media (max-width: 959px) {
+  .lp__pose--txt {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 160%;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 959px) {
+  .lp__pose--img {
+    margin-bottom: 18px;
+  }
+  .lp__pose--img img {
+    width: 90%;
+    height: auto;
+  }
+}
+@media (min-width: 960px) {
+  .lp__pose__img {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    margin: 50px 0 150px;
+  }
+}
+@media (max-width: 959px) {
+  .lp__pose__img {
+    margin-bottom: 50px;
+  }
+  .lp__pose__img img {
+    width: 90%;
+    height: auto;
+    margin-bottom: 18px;
+  }
+}
 .lp__infobox {
   width: 70%;
   margin: 0 auto 100px;
@@ -4371,6 +4436,39 @@ button {
 }
 .lp__infobox .top__lesson__schedule {
   width: 100%;
+}
+@media (min-width: 960px) {
+  .lp__gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 23px;
+    margin-bottom: 150px;
+  }
+  .lp__gallery--img02 {
+    margin-bottom: 23px;
+  }
+}
+@media (max-width: 959px) {
+  .lp__gallery {
+    margin-bottom: 100px;
+  }
+  .lp__gallery img {
+    width: 100%;
+    height: auto;
+  }
+  .lp__gallery--img01 {
+    width: 80%;
+    margin-bottom: 15px;
+  }
+  .lp__gallery--img02 {
+    width: 70%;
+    margin-bottom: 15px;
+    margin-left: auto;
+  }
+  .lp__gallery--img03 {
+    width: 80%;
+  }
 }
 .lp__ttl {
   font-weight: bold;

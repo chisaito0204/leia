@@ -271,7 +271,7 @@
 			}
 			&__txt01 {
 				@include media(lg) {
-					@include fontsize(20);
+					@include fontsize(18);
 					line-height: 200%;
 					flex: 0 0 45%;
 					text-wrap: pretty;
