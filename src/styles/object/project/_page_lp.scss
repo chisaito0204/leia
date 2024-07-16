@@ -195,21 +195,12 @@
 	}
 	&__pose {
 		text-align: center;
-		&--ttl {
-			font-weight: bold;
-			@include media(lg) {
-				@include fontsize(26);
-				margin-bottom: 15px;
-			}
-			@include media(sm) {
-				@include fontsize(18);
-				margin-bottom: 10px;
-			}
-		}
 		&--txt {
 			color: $pink;
+			font-weight: bold;
 			@include media(lg) {
-				@include fontsize(18);
+				@include fontsize(22);
+				line-height: 180%;
 				margin-bottom: 28px;
 			}
 			@include media(sm) {

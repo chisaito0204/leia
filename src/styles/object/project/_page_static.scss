@@ -204,13 +204,14 @@
 	}
 	&MoreBtn {
 		color: $pink;
-		font-family: $serif;
+		font-family: $noto;
+		font-weight: bold;
 		transition: 0.3s;
 		display: block;
 		width: fit-content;
 		transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
 		@include media(lg) {
-			@include fontsize(24);
+			@include fontsize(18);
 			margin: 50px 100px 0 auto;
 		}
 		@include media(sm) {
