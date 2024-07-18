@@ -139,12 +139,36 @@
 			height: 200px;
 		}
 	}
+	&Ttlbg{
+		&.con {
+			@include media(lg) {
+				background: url("/assets/img/contact/title-bg.jpg") no-repeat;
+				background-size: 100%;
+			}
+			@include media(sm) {
+				background: url("/assets/img/contact/sp/title-bg.jpg") no-repeat;
+				background-size: 100%;
+			}
+		}
+		&.blog {
+			@include media(lg) {
+				background: url("/assets/img/blog/title-bg.jpg") no-repeat;
+				background-size: 100%;
+			}
+			@include media(sm) {
+				background: url("/assets/img/blog/sp/title-bg.jpg") no-repeat;
+				background-size: 100%;
+			}
+		}
+	}
 	&Tttlbox {
 		width: 70%;
-		margin: 200px auto 50px;
+		margin: auto;
+		padding: 100px 0 50px;
 		@include media(sm) {
 			width: 90%;
-			margin: 110px auto 30px;
+			margin: auto;
+			padding: 110px 0 30px;
 		}
 		&--ttl {
 			font-family: $serif;

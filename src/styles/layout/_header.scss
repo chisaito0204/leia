@@ -2,12 +2,8 @@
     position: fixed;
     top: 0;
     z-index: 100;
-    left: 50%;
-    transform: translate(-50%, 0);
     transition: transform 0.3s ease-in-out;
     @include media(lg) {
-        left: 50%;
-        transform: translate(-50%, 0);
         width: 100%;
         margin: 0 auto;
         z-index: 99;
@@ -15,16 +11,10 @@
     @include media(sm) {
         width: 100%;
     }
-    &.isShow {
-        transform: translate(-50%, 0);
-    }
-    &.isHide {
-        transform: translate(-50%, -100%);
-    }
     &.scroll-nav {
         .header__content {
             padding: 5px 60px;
-            background: #FCE9F0;
+            background: #fce9f0;
         }
         .header__logo {
             .logo {
@@ -37,9 +27,12 @@
     }
     &.notop {
         // トップページ以外
+        @include media(lg) {
+            position: sticky;
+        }
         .header__content {
             @include media(lg) {
-                background: #FCE9F0;
+                background: #fce9f0;
             }
         }
         .header__nav {
@@ -179,10 +172,10 @@
             width: calc(100% - 60px);
             margin: 60px auto 0;
             position: relative;
-            .logo{
+            .logo {
                 position: absolute;
                 top: -40px;
-                left: -8px;            
+                left: -8px;
             }
         }
         &__item {
@@ -195,8 +188,8 @@
             color: #fff;
             text-align: right;
             font-family: $noto;
-            &.en{
-                font-family: $serif
+            &.en {
+                font-family: $serif;
             }
             @include fontsize(16);
             font-weight: 400;
