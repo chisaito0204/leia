@@ -93,7 +93,7 @@
       &__item {
         @include media(lg) {
           @include fontsize(16);
-          flex: 0 0 21%;
+          flex: 0 0 23%;
           margin-bottom: 15px;
           line-height: 160%;
         }

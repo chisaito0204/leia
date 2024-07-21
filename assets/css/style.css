@@ -499,7 +499,7 @@ button {
   .footer__navList__item {
     font-size: 16px;
     font-size: 1rem;
-    flex: 0 0 21%;
+    flex: 0 0 23%;
     margin-bottom: 15px;
     line-height: 160%;
   }
