@@ -784,15 +784,15 @@ button {
 }
 @media (min-width: 960px) {
   .top__subtitle {
-    font-size: 36px;
-    font-size: 2.25rem;
+    font-size: 32px;
+    font-size: 2rem;
   }
 }
 @media (max-width: 959px) {
   .top__subtitle {
-    font-size: 18px;
-    font-size: 1.125rem;
-    width: 90%;
+    font-size: 20px;
+    font-size: 1.25rem;
+    width: 95%;
     margin-left: auto;
   }
 }
@@ -800,40 +800,42 @@ button {
   position: relative;
   z-index: 10;
 }
+.top__subtitle.ja {
+  font-family: "Noto Sans", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
 .top__subtitle:before {
   content: "";
   display: block;
-  width: 24px;
-  height: 24px;
+  width: 100px;
+  height: 3px;
   background: #e12c6d;
   position: absolute;
-  left: -15px;
-  bottom: -5px;
-  z-index: 0;
+  left: 0;
+  bottom: -10px;
+  z-index: 10;
 }
 @media (max-width: 959px) {
   .top__subtitle:before {
-    width: 12px;
-    height: 12px;
-    left: -8px;
-    bottom: -1px;
+    width: 62px;
+    height: 2px;
+    bottom: -7px;
   }
 }
 .top__subtitle:after {
   content: "";
   display: block;
-  width: 154px;
-  height: 1px;
-  background: #1a1a1a;
+  width: 485px;
+  height: 3px;
+  background: #AFAFB0;
   position: absolute;
-  bottom: -8px;
-  left: 25px;
+  left: 0;
+  bottom: -10px;
 }
 @media (max-width: 959px) {
   .top__subtitle:after {
-    width: 83px;
-    bottom: -4px;
-    left: 15px;
+    width: 200px;
+    height: 2px;
+    bottom: -7px;
   }
 }
 .top__mv {
@@ -2059,10 +2061,10 @@ button {
   .top__lesson__access--box .studioImg {
     margin-bottom: 15px;
   }
-  .top__lesson__access--box .studioImg img {
-    width: 100%;
-    height: auto;
-  }
+}
+.top__lesson__access--box .studioImg img {
+  width: 100%;
+  height: auto;
 }
 .top__faq {
   margin-bottom: 100px;
@@ -3086,6 +3088,28 @@ button {
     font-size: 28px;
     font-size: 1.75rem;
     line-height: 160%;
+  }
+}
+
+@media (min-width: 960px) {
+  .class__textarea {
+    font-size: 16px;
+    font-size: 1rem;
+    margin: 35px 0 40px;
+  }
+  .class__textarea span {
+    line-height: 160%;
+  }
+}
+@media (max-width: 959px) {
+  .class__textarea {
+    font-size: 14px;
+    font-size: 0.875rem;
+    width: 85%;
+    margin: 20px auto 40px;
+  }
+  .class__textarea span {
+    line-height: 140%;
   }
 }
 
