@@ -4,6 +4,7 @@
  * 0. common
  * 1. header / footer
  * 2. Swiper
+ * 3. Tab
  *********************/
 
 /*********************
@@ -143,5 +144,18 @@ $(function () {
   $('.top__faq__inner').on('click', function () {
     $(this).find('.top__faq__inner--qu').toggleClass("is-open");
     $(this).find('.top__faq__inner--an').slideToggle();
+  });
+});
+
+/*********************
+* 4. Tab
+*********************/
+$(function () {
+  let tabs = $(".tab");
+  $(".tab").on("click", function () {
+    $(".active").removeClass("active");
+    $(this).addClass("active");
+    const index = tabs.index(this);
+    $(".media__contents").removeClass("show").eq(index).addClass("show");
   });
 });

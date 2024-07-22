@@ -9,39 +9,46 @@ import Layout from "../layouts/Layout.astro";
         <h2 class="modTttlbox--ttl">Dance Gallery</h2>
         <p class="modTttlbox--subttl">ダンスギャラリー</p>
       </div>
-      <div class="media__contents">
-        <figure class="media__contents__movie">
-          <img src="/assets/img/media/movie.jpg" alt="" width="785" height="462" />
-          <figcaption class="media__contents--txtbox">
-            <p class="media__contents--ttl">タイトルタイトルタイトルタイトル</p>
-            <p class="media__contents--date">2024/01/01</p>
-          </figcaption>
-        </figure>
 
-        <figure class="media__contents__movie">
-          <img src="/assets/img/media/movie.jpg" alt="" width="785" height="462" />
-          <figcaption class="media__contents--txtbox">
-            <p class="media__contents--ttl">タイトルタイトルタイトルタイトル</p>
-            <p class="media__contents--date">2024/01/01</p>
-          </figcaption>
-        </figure>
-
-        <figure class="media__contents__movie">
-          <img src="/assets/img/media/movie.jpg" alt="" width="785" height="462" />
-          <figcaption class="media__contents--txtbox">
-            <p class="media__contents--ttl">タイトルタイトルタイトルタイトル</p>
-            <p class="media__contents--date">2024/01/01</p>
-          </figcaption>
-        </figure>
-
-        <figure class="media__contents__movie">
-          <img src="/assets/img/media/movie.jpg" alt="" width="785" height="462" />
-          <figcaption class="media__contents--txtbox">
-            <p class="media__contents--ttl">タイトルタイトルタイトルタイトル</p>
-            <p class="media__contents--date">2024/01/01</p>
-          </figcaption>
-        </figure>
+      <div class="tab-container">
+        <div class="tab active">動画</div>
+        <div class="tab">写真</div>
       </div>
+
+      <div>
+        <div class="media__contents show">
+          <figure class="media__contents__movie">
+            <img src="/assets/img/media/movie.jpg" alt="" width="785" height="462" />
+          </figure>
+
+          <figure class="media__contents__movie">
+            <img src="/assets/img/media/movie.jpg" alt="" width="785" height="462" />
+          </figure>
+
+          <figure class="media__contents__movie">
+            <img src="/assets/img/media/movie.jpg" alt="" width="785" height="462" />
+          </figure>
+
+          <figure class="media__contents__movie">
+            <img src="/assets/img/media/movie.jpg" alt="" width="785" height="462" />
+          </figure>
+        </div>
+
+        <div class="media__contents">
+          <figure class="media__contents__movie">
+            <img src="/assets/img/media/movie.jpg" alt="" width="785" height="462" />
+          </figure>
+
+          <figure class="media__contents__movie">
+            <img src="/assets/img/media/movie.jpg" alt="" width="785" height="462" />
+          </figure>
+
+          <figure class="media__contents__movie">
+            <img src="/assets/img/media/movie.jpg" alt="" width="785" height="462" />
+          </figure>
+        </div>
+      </div>
+      
       <div class="modSns">
         <p class="modSns__txt">各SNSで Leia Dance Studioの<br class="sm-only" />最新情報を発信しています。<br />フォロー頂けると嬉しいです！</p>
         <div class="modSnsLinks">

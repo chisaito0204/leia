@@ -4138,9 +4138,13 @@ button {
 }
 .media__contents {
   width: 70%;
-  margin: 100px auto;
+  margin: 50px auto;
+  display: none;
+}
+.media__contents.show {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
   justify-content: space-between;
 }
 @media (max-width: 959px) {
@@ -4154,11 +4158,7 @@ button {
   height: auto;
 }
 .media__contents__movie {
-  flex: 0 0 48%;
-  margin-bottom: 30px;
-}
-.media__contents__movie:first-of-type {
-  flex: 0 0 100%;
+  flex: 0 0 32.6%;
 }
 .media__contents--txtbox {
   margin-top: 24px;

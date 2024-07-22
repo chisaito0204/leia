@@ -3,12 +3,36 @@
 	@include media(sm) {
 		margin-bottom: 80px;
 	}
+	.tab-container{
+		display: flex;
+		justify-content: center;
+		gap: 15px;
+		.tab{
+			@include fontsize(16);
+			color: #fff;
+			font-weight: bold;
+			background: #AFAFB0;
+			border-radius: 0.5rem;
+			padding: 8px 13px;
+			cursor: pointer;
+			@include media(sm) {
+				@include fontsize(14);
+			}
+			&.active{
+				background: $pink;
+			}
+		}
+	}
 	&__contents {
 		width: 70%;
-		margin: 100px auto;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
+		margin: 50px auto;
+		display: none;
+		&.show {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+			justify-content: space-between;
+		}
 		@include media(sm) {
 			width: 90%;
 			margin: 50px auto;
@@ -18,12 +42,8 @@
 			height: auto;
 		}
 		&__movie {
-			flex: 0 0 48%;
-			margin-bottom: 30px;
-			&:first-of-type {
-				flex: 0 0 100%;
-			}
-		}
+			flex: 0 0 32.6%;
+		}	
 		&--txtbox {
 			margin-top: 24px;
 			@include media(lg) {
