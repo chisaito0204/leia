@@ -1,6 +1,6 @@
 .teacher {
 	@include media(lg) {
-		margin-top: 200px;
+		margin-top: 100px;
 		.top__teacherBox {
 			align-items: flex-end;
 			margin-bottom: 100px;
@@ -159,7 +159,7 @@
 		&Box {
 			@include media(sm) {
 				overflow: auto;
-				margin-bottom: 30px;
+				margin-bottom: 10px;
 				.simplebar-scrollbar::before {
 					background: #d9d9d9;
 					border-radius: 50px;
@@ -379,5 +379,9 @@
 				}
 			}
 		}
+	}
+	&__note{
+		@include fontsize(14);
+		margin-bottom: 40px;
 	}
 }
