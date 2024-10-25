@@ -628,7 +628,7 @@
 			margin-bottom: 50px;
 		}
 		&__schedule {
-			width: 80%;
+			width: 100%;
 			margin: 40px auto 15px;
 			@include media(sm) {
 				width: 90%;
@@ -651,7 +651,7 @@
 					@include fontsize(13);
 					margin-top: 15px;
 					line-height: 150%;
-					width: 80%;
+					width: 100%;
 					margin: 0 auto 60px;
 				}
 				@include media(sm) {
@@ -1055,13 +1055,27 @@
 				width: 90%;
 				margin: 30px auto 60px;
 			}
-			&--txt {
+			&--text{
 				@include media(lg) {
 					@include fontsize(18);
+					margin-bottom: 50px;
+					line-height: 170%;
+				}
+			}
+			&--ttl{
+				@include media(lg) {
+					@include fontsize(24);
+					font-weight: bold;
+					margin-bottom: 20px;
+				}
+			}
+			&--txt {
+				@include media(lg) {
+					@include fontsize(16);
 					line-height: 170%;
 					margin-bottom: 30px;
 					.fsl {
-						@include fontsize(24);
+						@include fontsize(20);
 					}
 				}
 				@include media(sm) {
@@ -1083,7 +1097,7 @@
 				font-family: $noto;
 				@include media(lg) {
 					@include fontsize(16);
-					margin-top: 100px;
+					margin-top: 50px;
 				}
 				@include media(sm) {
 					@include fontsize(14);

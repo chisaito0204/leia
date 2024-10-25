@@ -1455,7 +1455,7 @@ button {
   }
 }
 .top__lesson__schedule {
-  width: 80%;
+  width: 100%;
   margin: 40px auto 15px;
 }
 @media (max-width: 959px) {
@@ -1487,7 +1487,7 @@ button {
     font-size: 0.8125rem;
     margin-top: 15px;
     line-height: 150%;
-    width: 80%;
+    width: 100%;
     margin: 0 auto 60px;
   }
 }
@@ -1992,15 +1992,31 @@ button {
   }
 }
 @media (min-width: 960px) {
-  .top__lesson__access--txt {
+  .top__lesson__access--text {
     font-size: 18px;
     font-size: 1.125rem;
+    margin-bottom: 50px;
+    line-height: 170%;
+  }
+}
+@media (min-width: 960px) {
+  .top__lesson__access--ttl {
+    font-size: 24px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 960px) {
+  .top__lesson__access--txt {
+    font-size: 16px;
+    font-size: 1rem;
     line-height: 170%;
     margin-bottom: 30px;
   }
   .top__lesson__access--txt .fsl {
-    font-size: 24px;
-    font-size: 1.5rem;
+    font-size: 20px;
+    font-size: 1.25rem;
   }
 }
 @media (max-width: 959px) {
