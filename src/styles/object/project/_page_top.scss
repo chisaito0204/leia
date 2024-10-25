@@ -64,7 +64,7 @@
 			@include fontsize(32);
 		}
 		@include media(sm) {
-			@include fontsize(20);
+			@include fontsize(22);
 			width: 95%;
 			margin-left: auto;
 		}
@@ -1074,7 +1074,7 @@
 					margin-bottom: 20px;
 				}
 				@include media(sm) {
-					@include fontsize(22);
+					@include fontsize(20);
 					margin-bottom: 10px;
 				}
 			}
