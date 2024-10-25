@@ -1053,7 +1053,7 @@
 			margin-top: 50px;
 			@include media(sm) {
 				width: 90%;
-				margin: 30px auto 60px;
+				margin: 30px auto 30px;
 			}
 			&--text{
 				@include media(lg) {
@@ -1061,12 +1061,21 @@
 					margin-bottom: 50px;
 					line-height: 170%;
 				}
+				@include media(sm) {
+					@include fontsize(16);
+					line-height: 160%;
+					margin-bottom: 30px;
+				}
 			}
 			&--ttl{
+				font-weight: bold;
 				@include media(lg) {
 					@include fontsize(24);
-					font-weight: bold;
 					margin-bottom: 20px;
+				}
+				@include media(sm) {
+					@include fontsize(22);
+					margin-bottom: 10px;
 				}
 			}
 			&--txt {
@@ -1079,7 +1088,7 @@
 					}
 				}
 				@include media(sm) {
-					@include fontsize(16);
+					@include fontsize(14);
 					line-height: 170%;
 					margin-bottom: 20px;
 					.fsl {
