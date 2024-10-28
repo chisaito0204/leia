@@ -1113,6 +1113,27 @@
 					width: 90%;
 					margin: 15px auto;
 				}
+				> a{
+					color: $pink;
+					border-bottom: solid 1px $pink;
+				}
+			}
+			&--note02{
+				text-align: right;
+				font-family: $noto;
+				@include media(lg) {
+					@include fontsize(16);
+					margin-top: 20px;
+				}
+				@include media(sm) {
+					@include fontsize(14);
+					width: 90%;
+					margin: 15px auto;
+				}
+				> a{
+					color: $pink;
+					border-bottom: solid 1px $pink;
+				}
 			}
 			&--box {
 				@include media(lg) {
@@ -1314,6 +1335,72 @@
 				@include media(sm) {
 					width: 100%;
 				}
+			}
+		}
+	}
+	&__mailmaga {
+		text-align: center;
+		margin-bottom: 50px;
+		form {
+			input[type="text"],
+			input[type="password"],
+			input[type="email"],
+			select {
+				height: 3em;
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+				border: none;
+				border-radius: 0.3rem;
+				outline: none;
+				padding: 8px;
+			}
+			input[type="button"] {
+				color: #fff;
+				background: $pink;
+				appearance: none;
+				border-radius: 6px;
+				border: 0;
+				font-weight: bold;
+				@include fontsize(16);
+				padding: 8px 15px;
+				margin-top: 15px;
+			}
+		}
+		&--ttl {
+			text-align: center;
+			@include fontsize(18);
+			font-weight: bold;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 30px;
+			&:before {
+				content: "";
+				background: url("/assets/img/common/ico_mail-pink.svg") no-repeat;
+				width: 28px;
+				height: 20px;
+				display: inline-block;
+				margin-right: 10px;
+			}
+			@include media(sm) {
+				@include fontsize(16);
+			}
+		}
+		&--subttl {
+			@include fontsize(16);
+			margin-bottom: 30px;
+			line-height: 180%;
+			@include media(sm) {
+				@include fontsize(14);
+				line-height: 160%;
+			}
+		}
+		&--txt {
+			max-width: 240px;
+			margin: 10px auto;
+			text-align: left;
+			font-weight: bold;
+			@include fontsize(16);
+			@include media(sm) {
 			}
 		}
 	}
