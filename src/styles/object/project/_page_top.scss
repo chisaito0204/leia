@@ -72,7 +72,7 @@
 			position: relative;
 			z-index: 10;
 		}
-		&.ja{
+		&.ja {
 			font-family: $noto;
 		}
 		&:before {
@@ -96,7 +96,7 @@
 			display: block;
 			width: 485px;
 			height: 3px;
-			background: #AFAFB0;
+			background: #afafb0;
 			position: absolute;
 			left: 0;
 			bottom: -10px;
@@ -810,7 +810,7 @@
 					}
 				}
 				&Txt {
-					> span{
+					> span {
 						font-weight: bold;
 					}
 					@include media(lg) {
@@ -1055,7 +1055,7 @@
 				width: 90%;
 				margin: 30px auto 30px;
 			}
-			&--text{
+			&--text {
 				@include media(lg) {
 					@include fontsize(18);
 					margin-bottom: 50px;
@@ -1067,7 +1067,7 @@
 					margin-bottom: 30px;
 				}
 			}
-			&--ttl{
+			&--ttl {
 				font-weight: bold;
 				@include media(lg) {
 					@include fontsize(24);
@@ -1102,7 +1102,7 @@
 			iframe {
 				width: 100%;
 			}
-			&--note{
+			&--note {
 				font-family: $noto;
 				@include media(lg) {
 					@include fontsize(16);
@@ -1113,12 +1113,12 @@
 					width: 90%;
 					margin: 15px auto;
 				}
-				> a{
+				> a {
 					color: $pink;
 					border-bottom: solid 1px $pink;
 				}
 			}
-			&--note02{
+			&--note02 {
 				text-align: right;
 				font-family: $noto;
 				@include media(lg) {
@@ -1130,7 +1130,7 @@
 					width: 90%;
 					margin: 15px auto;
 				}
-				> a{
+				> a {
 					color: $pink;
 					border-bottom: solid 1px $pink;
 				}
@@ -1147,15 +1147,22 @@
 					width: 90%;
 					margin: auto;
 				}
-				.studioImg{
+				.studioImg {
 					flex: 0 0 49%;
 					@include media(sm) {
 						margin-bottom: 15px;
 					}
-					img{
+					img {
 						width: 100%;
 						height: auto;
 					}
+				}
+			}
+			.mapImg {
+				margin-bottom: 20px;
+				img {
+					width: 100%;
+					height: auto;
 				}
 			}
 		}
@@ -1326,7 +1333,7 @@
 			width: 90%;
 			margin: 0 auto 80px;
 		}
-		> a{
+		> a {
 			display: inline-block;
 		}
 		.bannerImg {
